@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "865585749220",
+    "firebase_url": "https://elfaspace-prototype-default-rtdb.firebaseio.com",
+    "project_id": "elfaspace-prototype",
+    "storage_bucket": "elfaspace-prototype.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:865585749220:android:7497547ff06eb8b3cfe0f1",
+        "android_client_info": {
+          "package_name": "com.techlancerz.elfa_main_dashboard"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyArDGrNfJ1iNux9q1hT9HXKkRzQOfm6ces"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
