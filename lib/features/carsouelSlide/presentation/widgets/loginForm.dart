@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import '../../../../constants.dart';
 
 import 'customTextfields.dart';
@@ -200,7 +201,9 @@ class _logInFormState extends State<logInForm>
                             ),
                             DiffLoginButton(
                               text: 'Continue with Google',
-                              ontap: () {},
+                              ontap: () async {
+                                await _auth.signInWithGoogle(context);
+                              },
                               heightt: 60,
                               widthh: 310,
                               image: 'assets/icons/google.png',

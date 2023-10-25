@@ -5,12 +5,10 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import '../../constants.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../news_feed/news/provider/screen_toggler.dart';
 import '../work_spaces/presentation/pages/work_space.dart';
 
 class ExploreCategories extends StatelessWidget {
-  final Function(int) switchIndex;
-  const ExploreCategories({required this.switchIndex});
-
   @override
   Widget build(BuildContext context) {
     List<Map<String, String>> gridtileData = [
@@ -82,9 +80,11 @@ class ExploreCategories extends StatelessWidget {
                         gridtileData[index]['text'] as String, () {
                       Provider.of<SearchAndFilterHider>(context, listen: false)
                           .toggleHide();
-                      switchIndex(index);
-                      Navigator.pushNamed(
-                          context, gridtileData[index]['route'] as String);
+                      if ((gridtileData[index]['text'] as String)
+                          .contains("Gyms")) {
+                        Provider.of<ScreenToggler>(context, listen: false)
+                            .toggle(Screens.gyms);
+                      }
                     });
                   }),
             )

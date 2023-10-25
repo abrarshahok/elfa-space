@@ -16,7 +16,7 @@ class CarsouelBody extends StatelessWidget {
     return Stack(children: [
       Image.asset(
         image,
-        height: 240.h,
+        height: 270.h,
         width: 400.w,
         fit: BoxFit.cover,
       ),

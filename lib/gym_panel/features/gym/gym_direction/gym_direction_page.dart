@@ -104,122 +104,124 @@ class GymDirectionPage extends StatelessWidget {
             fit: BoxFit.cover,
           ),
         ),
-        child: Column(
-          children: [
-            const SizedBox(height: 60),
-            Row(
-              children: [
-                Container(
-                  width: 295,
-                  height: 43,
-                  margin: const EdgeInsets.only(left: 30),
-                  decoration: ShapeDecoration(
-                    color: const Color(0x269916AE),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(5),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              const SizedBox(height: 60),
+              Row(
+                children: [
+                  Container(
+                    width: 250,
+                    height: 43,
+                    margin: const EdgeInsets.only(left: 30),
+                    decoration: ShapeDecoration(
+                      color: const Color(0x269916AE),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(5),
+                      ),
                     ),
-                  ),
-                  child: Row(
-                    children: [
-                      const SizedBox(width: 10),
-                      Image.asset(MyIcons.searchIcon),
-                      const SizedBox(width: 10),
-                      const Expanded(
-                        child: TextField(
-                          decoration: InputDecoration(
-                            border: InputBorder.none,
-                            focusedBorder: InputBorder.none,
-                            enabledBorder: InputBorder.none,
-                            errorBorder: InputBorder.none,
-                            disabledBorder: InputBorder.none,
+                    child: Row(
+                      children: [
+                        const SizedBox(width: 10),
+                        Image.asset(MyIcons.searchIcon),
+                        const SizedBox(width: 10),
+                        const Expanded(
+                          child: TextField(
+                            decoration: InputDecoration(
+                              border: InputBorder.none,
+                              focusedBorder: InputBorder.none,
+                              enabledBorder: InputBorder.none,
+                              errorBorder: InputBorder.none,
+                              disabledBorder: InputBorder.none,
+                            ),
                           ),
                         ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(width: 10),
+                  Container(
+                    width: 40,
+                    height: 38,
+                    decoration: ShapeDecoration(
+                      color: const Color(0xFF9916AE),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12),
                       ),
-                    ],
-                  ),
-                ),
-                const SizedBox(width: 10),
-                Container(
-                  width: 40,
-                  height: 38,
-                  decoration: ShapeDecoration(
-                    color: const Color(0xFF9916AE),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: Image.asset(
+                      MyIcons.filterIcon,
+                      color: Colors.white,
                     ),
                   ),
-                  child: Image.asset(
-                    MyIcons.filterIcon,
-                    color: Colors.white,
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(height: 50),
-            Stack(
-              children: [
-                circle(
-                  height: 274,
-                  width: 277,
-                  color: const Color(0xFFB040C2).withOpacity(0.25),
-                ),
-                Positioned(
-                  bottom: 80,
-                  left: 50,
-                  child: locationCircle(),
-                ),
-                Positioned(
-                  bottom: 40,
-                  right: 110,
-                  child: locationCircle(),
-                ),
-                Positioned(
-                  top: 70,
-                  right: 100,
-                  child: locationCircle(),
-                ),
-                Positioned(
-                  top: 115,
-                  right: 40,
-                  child: locationCircle(),
-                ),
-                Positioned(
-                  bottom: 50,
-                  right: 35,
-                  child: Container(
-                    width: 41,
-                    height: 41,
-                    padding: const EdgeInsets.only(bottom: 4, right: 10),
-                    decoration: const ShapeDecoration(
-                      color: Color(0xFF9916AE),
-                      shape: OvalBorder(),
-                    ),
-                    child: Transform.rotate(
-                      angle: 30,
-                      child: Image.asset(MyIcons.compass),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(height: 40),
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  for (int i = 0; i < 3; i++)
-                    const _GymInfoContainer(
-                      gymName: 'Muscle Mania',
-                      image: MyImages.gymImage,
-                      ratings: 4.9,
-                      location: 'G8503 Autobhan Road, Hydeabad',
-                      distance: '3.5km/50 Min',
-                    ),
                 ],
               ),
-            ),
-          ],
+              const SizedBox(height: 50),
+              Stack(
+                children: [
+                  circle(
+                    height: 274,
+                    width: 277,
+                    color: const Color(0xFFB040C2).withOpacity(0.25),
+                  ),
+                  Positioned(
+                    bottom: 80,
+                    left: 50,
+                    child: locationCircle(),
+                  ),
+                  Positioned(
+                    bottom: 40,
+                    right: 110,
+                    child: locationCircle(),
+                  ),
+                  Positioned(
+                    top: 70,
+                    right: 100,
+                    child: locationCircle(),
+                  ),
+                  Positioned(
+                    top: 115,
+                    right: 40,
+                    child: locationCircle(),
+                  ),
+                  Positioned(
+                    bottom: 50,
+                    right: 35,
+                    child: Container(
+                      width: 41,
+                      height: 41,
+                      padding: const EdgeInsets.only(bottom: 4, right: 10),
+                      decoration: const ShapeDecoration(
+                        color: Color(0xFF9916AE),
+                        shape: OvalBorder(),
+                      ),
+                      child: Transform.rotate(
+                        angle: 30,
+                        child: Image.asset(MyIcons.compass),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 40),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    for (int i = 0; i < 3; i++)
+                      const _GymInfoContainer(
+                        gymName: 'Muscle Mania',
+                        image: MyImages.gymImage,
+                        ratings: 4.9,
+                        location: 'G8503 Autobhan Road, Hydeabad',
+                        distance: '3.5km/50 Min',
+                      ),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
       bottomNavigationBar: Container(

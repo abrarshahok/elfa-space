@@ -3,6 +3,7 @@ import 'package:elfa_main_dashboard/features/splash_screen/presentation/provider
 import 'package:elfa_main_dashboard/features/work_spaces/presentation/pages/work_space.dart';
 import 'package:elfa_main_dashboard/gym_panel/gym_screen/gym_home_page.dart';
 import 'package:elfa_main_dashboard/gym_panel/gym_screen/gym_screen.dart';
+import 'package:elfa_main_dashboard/news_feed/news/provider/screen_toggler.dart';
 import 'package:elfa_main_dashboard/news_feed/news/provider/search_and_filter_hider.dart';
 import 'package:flutter/material.dart';
 import './features/splash_screen/presentation/pages/splash_screen.dart';
@@ -50,6 +51,7 @@ class MyApp extends StatelessWidget {
           ChangeNotifierProvider(create: (_) => DotChanger()),
           ChangeNotifierProvider(create: (_) => SplashScreenAnimator()),
           ChangeNotifierProvider(create: (_) => SearchAndFilterHider()),
+          ChangeNotifierProvider(create: (_) => ScreenToggler()),
         ],
         child: MaterialApp(
           debugShowCheckedModeBanner: false,
@@ -66,7 +68,7 @@ class MyApp extends StatelessWidget {
             WorkSpace.routeName: (ctx) => WorkSpace(),
             NewsScreen.routeName: (context) => NewsScreen(),
             GymHomePage.routeName: (context) => GymHomePage(),
-            // GymScreen.routeName: (context) => GymScreen(),
+            GymScreen.routeName: (context) => GymScreen(),
             GymFilters.routeName: (context) => GymFilters(),
             GymInfoPage.routeName: (context) => const GymInfoPage(),
             BookingPage.routeName: (context) => BookingPage(),

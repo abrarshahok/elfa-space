@@ -97,9 +97,7 @@ class PaymentDonePage extends StatelessWidget {
               ),
             ),
             TextButton(
-              onPressed: () {
-                Navigator.of(context).pushReplacementNamed(GymScreen.routeName);
-              },
+              onPressed: () {},
               child: Text(
                 'Go To Home',
                 style: MyFonts.getPoppin(

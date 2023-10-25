@@ -19,7 +19,7 @@ class _AddCardState extends State<AddCard> {
     return Scaffold(
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
-        padding: const EdgeInsets.symmetric(horizontal: 25),
+        padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -74,7 +74,7 @@ class _AddCardState extends State<AddCard> {
                     ),
                     const SizedBox(height: 5),
                     const CustomTextField(
-                      width: 162,
+                      width: 146,
                       hintText: '02/30',
                     ),
                   ],
@@ -94,7 +94,7 @@ class _AddCardState extends State<AddCard> {
                     ),
                     const SizedBox(height: 5),
                     const CustomTextField(
-                      width: 162,
+                      width: 146,
                       hintText: '000',
                     ),
                   ],
@@ -252,7 +252,7 @@ class _MyCard extends StatelessWidget {
                       title: 'Expiry date',
                       subtitle: '02/30',
                     ),
-                    const SizedBox(width: 85),
+                    const SizedBox(width: 60),
                     Container(
                       width: 35,
                       height: 28,

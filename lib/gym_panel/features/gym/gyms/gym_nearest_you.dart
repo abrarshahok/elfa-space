@@ -119,7 +119,7 @@ class _GymInfoContainer extends StatelessWidget {
         ),
         const SizedBox(width: 5),
         SizedBox(
-          width: 150,
+          width: 120,
           child: Text(
             textLabel,
             maxLines: 1,
@@ -144,7 +144,7 @@ class _GymInfoContainer extends StatelessWidget {
     return Container(
       width: 351,
       height: 129,
-      margin: const EdgeInsets.only(left: 17, bottom: 7, top: 5, right: 17),
+      margin: const EdgeInsets.only(left: 12, bottom: 7, top: 5, right: 12),
       decoration: ShapeDecoration(
         color: Colors.white,
         shape: RoundedRectangleBorder(

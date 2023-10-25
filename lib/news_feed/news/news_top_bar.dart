@@ -25,8 +25,8 @@ class _NewsTopBarState extends State<NewsTopBar> {
 
   Widget customContainer(Widget child) {
     return Container(
-      width: 42,
-      height: 42,
+      width: 40,
+      height: 40,
       alignment: Alignment.center,
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
       clipBehavior: Clip.antiAlias,
@@ -54,9 +54,9 @@ class _NewsTopBarState extends State<NewsTopBar> {
     bool isHidden = Provider.of<SearchAndFilterHider>(context).isHidden;
     return Container(
       width: size.width,
-      height: isHidden ? 250 : 170,
+      height: !isHidden ? size.height * 0.35 : 160,
       decoration: const BoxDecoration(color: Colors.white),
-      padding: const EdgeInsets.only(left: 16.5, right: 16.5),
+      padding: const EdgeInsets.only(left: 10, right: 10),
       child: Column(
         children: [
           const SizedBox(height: 60),
@@ -119,7 +119,7 @@ class _NewsTopBarState extends State<NewsTopBar> {
                 ),
               const SizedBox(width: 5),
               Container(
-                width: (currentIndex == 0 || currentIndex == 1) ? 149 : 160,
+                width: (currentIndex == 0 || currentIndex == 1) ? 120 : 140,
                 height: 35,
                 alignment: Alignment.center,
                 padding:
@@ -211,15 +211,15 @@ class _NewsTopBarState extends State<NewsTopBar> {
               ),
             ],
           ),
-          if (isHidden) ...[
+          if (!isHidden) ...[
             const SizedBox(height: 30),
             SizedBox(
               width: size.width * 0.9,
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Container(
-                    width: 312,
+                    width: size.width * 0.73,
                     height: 50,
                     padding:
                         const EdgeInsets.symmetric(horizontal: 10, vertical: 6),

@@ -1,3 +1,4 @@
+import 'package:elfa_main_dashboard/news_feed/news/provider/screen_toggler.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -6,9 +7,7 @@ import '../../news_feed/news/provider/search_and_filter_hider.dart';
 import 'gym_home_page.dart';
 
 class GymScreen extends StatelessWidget {
-  final Function(int) switchIndex;
-
-  static const routeName = '/app-screen';
+  static const routeName = '/gym-screen';
 
   Widget topBar(BuildContext context) {
     return Column(
@@ -22,7 +21,8 @@ class GymScreen extends StatelessWidget {
               onTap: () {
                 Provider.of<SearchAndFilterHider>(context, listen: false)
                     .toggleHide();
-                switchIndex(0);
+                Provider.of<ScreenToggler>(context, listen: false)
+                    .toggle(Screens.explore);
               },
               child: Container(
                 width: 24,
@@ -71,10 +71,10 @@ class GymScreen extends StatelessWidget {
         SizedBox(
           width: 380,
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               Container(
-                width: 312,
+                width: 290,
                 height: 50,
                 padding:
                     const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
@@ -162,16 +162,15 @@ class GymScreen extends StatelessWidget {
     );
   }
 
-  const GymScreen({required this.switchIndex});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Column(
         children: [
-          const SizedBox(height: 30),
-          topBar(context),
           const SizedBox(height: 20),
+          topBar(context),
+          const SizedBox(height: 10),
           Expanded(
             child: GymHomePage(),
           ),

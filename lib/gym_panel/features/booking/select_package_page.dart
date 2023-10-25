@@ -140,6 +140,7 @@ class _SelectPackagePageState extends State<SelectPackagePage> {
               child: GridView.builder(
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
+                  childAspectRatio: 0.85,
                 ),
                 itemCount: _packageInfo.length,
                 itemBuilder: (ctx, index) => _PackageCard(

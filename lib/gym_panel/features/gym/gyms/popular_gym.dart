@@ -39,7 +39,7 @@ class PopularGym extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.sizeOf(context);
     return SizedBox(
-      height: size.height * 0.33,
+      height: size.height * 0.36,
       width: size.width,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

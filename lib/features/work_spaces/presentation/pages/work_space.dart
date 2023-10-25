@@ -7,7 +7,6 @@ import 'package:flutter/material.dart';
 
 class WorkSpace extends StatefulWidget {
   static const routeName = '/workSpace';
-  WorkSpace({Key? key});
 
   @override
   State<WorkSpace> createState() => _WorkSpaceState();

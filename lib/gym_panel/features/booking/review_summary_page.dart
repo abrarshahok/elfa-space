@@ -168,7 +168,7 @@ class _GymInfoContainer extends StatelessWidget {
         ),
         const SizedBox(width: 5),
         SizedBox(
-          width: 150,
+          width: 135,
           child: Text(
             textLabel,
             maxLines: 1,
