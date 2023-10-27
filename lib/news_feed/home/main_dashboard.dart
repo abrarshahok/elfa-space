@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 import '../../../constants/constants.dart';
-import 'category.dart';
-import 'post.dart';
-import 'story.dart';
+import '../components/category.dart';
+import '../components/post.dart';
+import '../components/story.dart';
 
 class MainDashboard extends StatelessWidget {
   final profileList = const [
@@ -40,54 +40,78 @@ class MainDashboard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.sizeOf(context);
-    return Container(
-      width: size.width,
-      height: 868,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          const SizedBox(height: 30),
-          Padding(
-            padding: const EdgeInsets.only(left: 10),
-            child: SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
-                children: profileList
-                    .map(
-                      (profile) => Story(
-                        isMe: profile['name']!.contains('You'),
-                        profile: profile,
+    return Scaffold(
+      body: CustomScrollView(
+        slivers: [
+          SliverToBoxAdapter(
+            child: Padding(
+              padding: const EdgeInsets.all(10),
+              child: SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: profileList
+                      .map(
+                        (profile) => Story(
+                          isMe: profile['name'] == 'You',
+                          profile: profile,
+                        ),
+                      )
+                      .toList(),
+                ),
+              ),
+            ),
+          ),
+          SliverToBoxAdapter(
+            child: Container(
+              width: 390,
+              height: 74,
+              decoration: const BoxDecoration(color: Colors.white),
+              child: SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      const SizedBox(width: 10),
+                      Container(
+                        height: 30,
+                        width: 40,
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 10, vertical: 6),
+                        clipBehavior: Clip.antiAlias,
+                        decoration: ShapeDecoration(
+                          gradient: const LinearGradient(
+                            begin: Alignment(0.00, -1.00),
+                            end: Alignment(0, 1),
+                            colors: [Color(0xFFB509D0), Color(0xFF8D1B9F)],
+                          ),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          shadows: const [
+                            BoxShadow(
+                              color: Color(0x198D1B9F),
+                              blurRadius: 25,
+                              offset: Offset(0, 4),
+                              spreadRadius: 0,
+                            )
+                          ],
+                        ),
+                        child: Image.asset(MyIcons.filterIcon),
                       ),
-                    )
-                    .toList(),
+                      ...categoriesList
+                          .map((category) => Category(category: category))
+                          .toList(),
+                    ]),
               ),
             ),
           ),
-          const SizedBox(height: 20),
-          Container(
-            width: 390,
-            height: 74,
-            decoration: const BoxDecoration(color: Colors.white),
-            child: SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: categoriesList
-                    .map((category) => Category(category: category))
-                    .toList(),
-              ),
-            ),
-          ),
-          const SizedBox(height: 10),
-          Expanded(
-            child: ListView.builder(
-              padding: const EdgeInsets.only(bottom: 120),
-              itemCount: 3,
-              itemBuilder: (ctx, index) => const Column(
+          SliverList(
+            delegate: SliverChildBuilderDelegate(
+              childCount: categoriesList.length,
+              (BuildContext context, int index) => const Column(
                 children: [
-                  Post(),
                   SizedBox(height: 10),
+                  Post(),
                 ],
               ),
             ),

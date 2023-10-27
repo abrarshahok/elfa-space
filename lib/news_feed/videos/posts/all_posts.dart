@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import '/../../constants/constants.dart';
-import '../../home/post.dart';
+import '../../components/post.dart';
 
 class AllPosts extends StatelessWidget {
   const AllPosts({super.key});

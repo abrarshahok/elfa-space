@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../widgets/locationWidget.dart';
+import '../widgets/location_widget.dart';
 import 'package:elfa_main_dashboard/constants.dart';
 
 class enableLocationScreen extends StatelessWidget {

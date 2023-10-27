@@ -396,23 +396,26 @@ class ReviewWithPhotos extends StatelessWidget {
           ],
         ),
         const SizedBox(height: 10),
-        Row(
-          children: [
-            const SizedBox(width: 22),
-            for (int i = 0; i < 2; i++)
-              Container(
-                width: 180,
-                height: 160,
-                margin: const EdgeInsets.only(right: 10),
-                decoration: BoxDecoration(
-                  image: const DecorationImage(
-                    image: AssetImage(MyImages.nearGym2),
-                    fit: BoxFit.fill,
+        SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Row(
+            children: [
+              const SizedBox(width: 22),
+              for (int i = 0; i < 2; i++)
+                Container(
+                  width: 180,
+                  height: 160,
+                  margin: const EdgeInsets.only(right: 10),
+                  decoration: BoxDecoration(
+                    image: const DecorationImage(
+                      image: AssetImage(MyImages.nearGym2),
+                      fit: BoxFit.fill,
+                    ),
+                    borderRadius: BorderRadius.circular(12),
                   ),
-                  borderRadius: BorderRadius.circular(12),
                 ),
-              ),
-          ],
+            ],
+          ),
         )
       ],
     );

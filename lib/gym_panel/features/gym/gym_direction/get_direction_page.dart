@@ -57,35 +57,39 @@ class GetDirectionPage extends StatelessWidget {
         ),
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const SizedBox(height: 60),
-            const CustomAppBar(title: 'Get Direction'),
-            const SizedBox(height: 90),
-            Center(
-              child: locationCircle(),
-            ),
-            Center(
-              child: Container(
-                height: 400,
-                width: 3,
-                color: Colors.purple,
-              ),
-            ),
-            Center(
-              child: Container(
-                width: 41,
-                height: 41,
-                padding: const EdgeInsets.only(bottom: 5, right: 5),
-                decoration: const ShapeDecoration(
-                  color: Color(0xFF9916AE),
-                  shape: OvalBorder(),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const SizedBox(height: 60),
+                const CustomAppBar(title: 'Get Direction'),
+                const SizedBox(height: 90),
+                Center(
+                  child: locationCircle(),
                 ),
-                child: Transform.rotate(
-                  angle: 31,
-                  child: Image.asset(MyIcons.compass),
+                Center(
+                  child: Container(
+                    height: 330,
+                    width: 3,
+                    color: Colors.purple,
+                  ),
                 ),
-              ),
+                Center(
+                  child: Container(
+                    width: 41,
+                    height: 41,
+                    padding: const EdgeInsets.only(bottom: 5, right: 5),
+                    decoration: const ShapeDecoration(
+                      color: Color(0xFF9916AE),
+                      shape: OvalBorder(),
+                    ),
+                    child: Transform.rotate(
+                      angle: 31,
+                      child: Image.asset(MyIcons.compass),
+                    ),
+                  ),
+                ),
+              ],
             ),
           ],
         ),

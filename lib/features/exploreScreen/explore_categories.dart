@@ -1,5 +1,4 @@
 import 'package:elfa_main_dashboard/gym_panel/gym_screen/gym_screen.dart';
-import 'package:elfa_main_dashboard/news_feed/news/provider/search_and_filter_hider.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -11,36 +10,42 @@ import '../work_spaces/presentation/pages/work_space.dart';
 class ExploreCategories extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    List<Map<String, String>> gridtileData = [
+    List<Map<String, dynamic>> gridtileData = [
       {
         "text": "workspaces",
         "image": "assets/splashAssets/carsouelAssets/slide1.png",
-        "route": WorkSpace.routeName
+        "route": WorkSpace.routeName,
+        'toggle': Screens.explore,
       },
       {
         "text": "     Schools",
         "image": "assets/splashAssets/carsouelAssets/slide2.png",
-        "route": WorkSpace.routeName
+        "route": WorkSpace.routeName,
+        'toggle': Screens.explore,
       },
       {
         "text": "   Local Food ",
         "image": "assets/splashAssets/carsouelAssets/slide3.png",
-        "route": WorkSpace.routeName
+        "route": WorkSpace.routeName,
+        'toggle': Screens.explore,
       },
       {
         "text": "       Gyms",
-        "image": "assets/splashAssets/carsouelAssets/slide4.png",
+        "image": "assets/splashAssets/carsouelAssets/slide4.jpeg",
         "route": GymScreen.routeName,
+        'toggle': Screens.explore,
       },
       {
         "text": "      Salons ",
         "image": "assets/splashAssets/carsouelAssets/slide5.png",
-        "route": WorkSpace.routeName
+        "route": WorkSpace.routeName,
+        'toggle': Screens.explore,
       },
       {
         "text": "Marriage Halls",
         "image": "assets/splashAssets/carsouelAssets/slide6.png",
-        "route": WorkSpace.routeName
+        "route": WorkSpace.routeName,
+        'toggle': Screens.explore,
       },
     ];
 
@@ -65,28 +70,35 @@ class ExploreCategories extends StatelessWidget {
             SizedBox(
               height: 10.h,
             ),
-//main bodysized
             Expanded(
               child: GridView.builder(
-                  gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-                    childAspectRatio: 2.2 / 2,
-                    crossAxisSpacing: 10,
-                    mainAxisSpacing: 10,
-                    maxCrossAxisExtent: 200,
-                  ),
-                  itemCount: gridtileData.length,
-                  itemBuilder: (_, index) {
-                    return moduelTile(gridtileData[index]['image'] as String,
-                        gridtileData[index]['text'] as String, () {
-                      Provider.of<SearchAndFilterHider>(context, listen: false)
-                          .toggleHide();
-                      if ((gridtileData[index]['text'] as String)
-                          .contains("Gyms")) {
-                        Provider.of<ScreenToggler>(context, listen: false)
-                            .toggle(Screens.gyms);
-                      }
-                    });
-                  }),
+                gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+                  childAspectRatio: 2.2 / 2,
+                  crossAxisSpacing: 10,
+                  mainAxisSpacing: 10,
+                  maxCrossAxisExtent: 200,
+                ),
+                itemCount: gridtileData.length,
+                itemBuilder: (_, index) {
+                  return moduelTile(gridtileData[index]['image'] as String,
+                      gridtileData[index]['text'] as String, () {
+                    if (gridtileData[index]['text']
+                        .toString()
+                        .contains("Gyms")) {
+                      Provider.of<ScreenToggler>(context, listen: false)
+                          .toggle(Screens.gyms);
+                    } else if (gridtileData[index]['text']
+                        .toString()
+                        .contains("Schools")) {
+                      Provider.of<ScreenToggler>(context, listen: false)
+                          .toggle(Screens.schools);
+                    } else {
+                      Navigator.of(context)
+                          .pushNamed(gridtileData[index]['route']);
+                    }
+                  });
+                },
+              ),
             )
           ],
         ),

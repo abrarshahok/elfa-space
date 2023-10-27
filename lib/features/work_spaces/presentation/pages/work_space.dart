@@ -1,5 +1,5 @@
 import 'package:elfa_main_dashboard/constants.dart';
-import 'package:elfa_main_dashboard/features/work_spaces/presentation/pages/favurite_panel.dart';
+import 'package:elfa_main_dashboard/features/work_spaces/presentation/pages/favourite_panel.dart';
 import 'package:elfa_main_dashboard/features/work_spaces/presentation/pages/inbox_panel.dart';
 import 'package:elfa_main_dashboard/features/work_spaces/presentation/pages/profile_page.dart';
 import 'package:elfa_main_dashboard/features/work_spaces/presentation/pages/work_space_home.dart';
@@ -14,11 +14,11 @@ class WorkSpace extends StatefulWidget {
 
 class _WorkSpaceState extends State<WorkSpace> {
   int _currentIndex = 0;
-  static const TextStyle optionStyle =
-      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
+  // static const TextStyle optionStyle =
+  //     TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static final List<Widget> _widgetOptions = <Widget>[
     const HomePage(),
-    const FavoritePlacesScreen(),
+    const FavouritePlacesScreen(),
     const InboxScreen(),
     ProfileScreen(),
   ];

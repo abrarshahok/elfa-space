@@ -69,7 +69,7 @@ class _TrainerCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 340,
-      height: 170,
+      height: 180,
       margin: const EdgeInsets.only(right: 10, bottom: 20),
       decoration: ShapeDecoration(
         color: Colors.white,
@@ -110,35 +110,46 @@ class _TrainerCard extends StatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Container(
-                    width: 160,
-                    height: 23,
-                    margin: const EdgeInsets.only(top: 13, left: 13),
-                    decoration: ShapeDecoration(
-                      color: const Color(0x269916AE),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                    ),
-                    alignment: Alignment.center,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        const Icon(
-                          Icons.verified,
-                          color: Color(0xFF9916AE),
-                          size: 15,
-                        ),
-                        Text(
-                          'Professional Trainer',
-                          style: MyFonts.getPoppin(
-                            color: const Color(0xFF9916AE),
-                            fontSize: 12,
-                            fontWeight: FontWeight.w400,
+                  Row(
+                    children: [
+                      Container(
+                        width: 160,
+                        height: 23,
+                        margin: const EdgeInsets.only(top: 13, left: 13),
+                        decoration: ShapeDecoration(
+                          color: const Color(0x269916AE),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12),
                           ),
                         ),
-                      ],
-                    ),
+                        alignment: Alignment.center,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            const Icon(
+                              Icons.verified,
+                              color: Color(0xFF9916AE),
+                              size: 15,
+                            ),
+                            Text(
+                              'Professional Trainer',
+                              style: MyFonts.getPoppin(
+                                color: const Color(0xFF9916AE),
+                                fontSize: 12,
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      IconButton(
+                        onPressed: () {},
+                        icon: const Icon(
+                          Icons.favorite,
+                          color: Color(0xFF9916AE),
+                        ),
+                      ),
+                    ],
                   ),
                   const SizedBox(height: 10),
                   Padding(
@@ -170,7 +181,7 @@ class _TrainerCard extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         for (int i = 0; i < 5; i++) star(),
-                        const SizedBox(width: 10),
+                        const SizedBox(width: 5),
                         Text(
                           '4.8',
                           style: MyFonts.getPoppin(
@@ -179,7 +190,7 @@ class _TrainerCard extends StatelessWidget {
                             fontWeight: FontWeight.w400,
                           ),
                         ),
-                        const SizedBox(width: 10),
+                        const SizedBox(width: 5),
                         Container(
                           height: 15,
                           decoration: ShapeDecoration(
@@ -193,7 +204,7 @@ class _TrainerCard extends StatelessWidget {
                             ),
                           ),
                         ),
-                        const SizedBox(width: 10),
+                        const SizedBox(width: 5),
                         Text(
                           '39 reviews',
                           style: MyFonts.getPoppin(
@@ -206,14 +217,6 @@ class _TrainerCard extends StatelessWidget {
                     ),
                   ),
                 ],
-              ),
-              const Spacer(),
-              IconButton(
-                onPressed: () {},
-                icon: const Icon(
-                  Icons.favorite,
-                  color: Color(0xFF9916AE),
-                ),
               ),
             ],
           ),

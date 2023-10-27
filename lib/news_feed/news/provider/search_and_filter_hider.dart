@@ -1,9 +1,9 @@
-import 'package:flutter/material.dart';
+// import 'package:flutter/material.dart';
 
-class SearchAndFilterHider with ChangeNotifier {
-  bool isHidden = false;
-  void toggleHide() {
-    isHidden = !isHidden;
-    notifyListeners();
-  }
-}
+// class SearchAndFilterHider with ChangeNotifier {
+//   bool isHidden = false;
+//   void toggleHide(bool newValue) {
+//     isHidden = newValue;
+//     notifyListeners();
+//   }
+// }

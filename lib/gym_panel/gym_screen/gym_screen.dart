@@ -3,13 +3,12 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../constants/constants.dart';
-import '../../news_feed/news/provider/search_and_filter_hider.dart';
 import 'gym_home_page.dart';
 
 class GymScreen extends StatelessWidget {
   static const routeName = '/gym-screen';
 
-  Widget topBar(BuildContext context) {
+  Widget gymTopBar(BuildContext context) {
     return Column(
       children: [
         Row(
@@ -19,8 +18,6 @@ class GymScreen extends StatelessWidget {
             const SizedBox(width: 20),
             InkWell(
               onTap: () {
-                Provider.of<SearchAndFilterHider>(context, listen: false)
-                    .toggleHide();
                 Provider.of<ScreenToggler>(context, listen: false)
                     .toggle(Screens.explore);
               },
@@ -67,7 +64,7 @@ class GymScreen extends StatelessWidget {
             const Spacer(),
           ],
         ),
-        const SizedBox(height: 30),
+        const SizedBox(height: 10),
         SizedBox(
           width: 380,
           child: Row(
@@ -168,8 +165,8 @@ class GymScreen extends StatelessWidget {
       backgroundColor: Colors.white,
       body: Column(
         children: [
-          const SizedBox(height: 20),
-          topBar(context),
+          const SizedBox(height: 10),
+          gymTopBar(context),
           const SizedBox(height: 10),
           Expanded(
             child: GymHomePage(),

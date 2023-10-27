@@ -15,6 +15,8 @@ class MyIcons {
   static const String clipboard = 'assets/icons/clipboard.png';
   static const String menuIcon1 = 'assets/icons/menu.png';
   static const String mapPinIcon = 'assets/icons/map_pin.png';
+  static const String mapPinIcon2 = 'assets/icons/map_pin2.png';
+
   static const String searchIcon = 'assets/icons/search.png';
   static const String sendIcon1 = 'assets/icons/send.png';
   static const String bellIcon = 'assets/icons/bell.png';
@@ -44,16 +46,17 @@ class MyIcons {
 }
 
 class MyImages {
-  static const manImage = 'assets/images/man.png';
-  static const womenImage = 'assets/images/women.png';
-  static const nearGym1 = 'assets/images/near_gym1.png';
-  static const nearGym2 = 'assets/images/near_gym2.png';
-  static const gymImage = 'assets/images/gym_image.png';
-  static const gymMan = 'assets/images/gym_man.png';
-  static const john = 'assets/images/john.png';
-  static const map = 'assets/images/map.png';
-  static const barcode = 'assets/images/barcode.jpg';
-  static const mapImage = 'assets/images/map_image.png';
+  static const String manImage = 'assets/images/man.png';
+  static const String womenImage = 'assets/images/women.png';
+  static const String nearGym1 = 'assets/images/near_gym1.png';
+  static const String nearGym2 = 'assets/images/near_gym2.png';
+  static const String gymImage = 'assets/images/gym_image.png';
+  static const String gymMan = 'assets/images/gym_man.png';
+  static const String john = 'assets/images/john.png';
+  static const String map = 'assets/images/map.png';
+  static const String barcode = 'assets/images/barcode.jpg';
+  static const String mapImage = 'assets/images/map_image.png';
+  static const String mapbox = 'assets/images/mapbox.png';
   static const String you = 'assets/images/you.png';
   static const String benjamin = 'assets/images/benjamin.png';
   static const String claire = 'assets/images/claire.png';
@@ -69,6 +72,14 @@ class MyImages {
   static const String image2 = 'assets/images/image2.jpeg';
   static const String image3 = 'assets/images/image3.jpeg';
   static const String baseImage = 'assets/images/base.png';
+  static const String school1 = 'assets/images/school1.jpeg';
+  static const String school2 = 'assets/images/school2.jpeg';
+  static const String school3 = 'assets/images/school3.jpeg';
+  static const String kids = 'assets/images/kids.jpeg';
+  static const String kid1 = 'assets/images/kid1.jpeg';
+  static const String pencil = 'assets/images/pencil.jpeg';
+  static const String teacher = 'assets/images/teacher.jpeg';
+  static const String direction = 'assets/images/direction.png';
 }
 
 class MyFonts {

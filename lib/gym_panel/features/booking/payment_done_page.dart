@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-
-import '../../gym_screen/gym_screen.dart';
 import '/constants/constants.dart';
 import '../../components/custom_app_bar.dart';
 

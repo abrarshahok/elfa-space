@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:elfa_main_dashboard/features/enableLoction_screen/presentation/pages/enable_location_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../../presentation/provider/splashScreenAnimator.dart';
+import '../../presentation/provider/splash_screen_animator.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 class Utils {

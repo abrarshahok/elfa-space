@@ -1,7 +1,5 @@
-import 'package:elfa_main_dashboard/news_feed/news/provider/search_and_filter_hider.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import '../../../constants/constants.dart';
 
 class NewsTopBar extends StatefulWidget {
@@ -25,8 +23,8 @@ class _NewsTopBarState extends State<NewsTopBar> {
 
   Widget customContainer(Widget child) {
     return Container(
-      width: 40,
-      height: 40,
+      width: 42,
+      height: 42,
       alignment: Alignment.center,
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
       clipBehavior: Clip.antiAlias,
@@ -51,148 +49,76 @@ class _NewsTopBarState extends State<NewsTopBar> {
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
-    bool isHidden = Provider.of<SearchAndFilterHider>(context).isHidden;
+
     return Container(
       width: size.width,
-      height: !isHidden ? size.height * 0.35 : 160,
+      height: size.height * 0.19,
       decoration: const BoxDecoration(color: Colors.white),
       padding: const EdgeInsets.only(left: 10, right: 10),
       child: Column(
         children: [
-          const SizedBox(height: 60),
+          const SizedBox(height: 40),
           Row(
-            mainAxisAlignment: MainAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              if (currentIndex == 0 || currentIndex == 1) ...[
-                Container(
-                  width: 30,
-                  height: 30,
-                  clipBehavior: Clip.antiAlias,
-                  decoration: ShapeDecoration(
-                    gradient: const LinearGradient(
-                      begin: Alignment(0.00, -1.00),
-                      end: Alignment(0, 1),
-                      colors: [Color(0xFFB509D0), Color(0xFF8D1B9F)],
-                    ),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    shadows: const [
-                      BoxShadow(
-                        color: Color(0x198D1B9F),
-                        blurRadius: 25,
-                        offset: Offset(0, 4),
-                        spreadRadius: 0,
-                      )
-                    ],
-                  ),
-                  child: Transform.flip(
-                    flipX: true,
-                    child: Image.asset(
-                      MyIcons.menuIcon1,
-                      height: 30,
-                      width: 30,
-                    ),
-                  ),
-                ),
-                const SizedBox(width: 5),
-                Container(
-                  width: 45,
-                  height: 25,
-                  decoration: const BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage(MyIcons.infinity),
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                ),
-              ] else
-                Text(
-                  'Elfaspace',
-                  textAlign: TextAlign.center,
-                  style: GoogleFonts.chelseaMarket(
-                    color: const Color(0xFFB509D0),
-                    fontSize: 20,
-                    fontWeight: FontWeight.w400,
-                    letterSpacing: -0.28,
-                  ),
-                ),
-              const SizedBox(width: 5),
               Container(
-                width: (currentIndex == 0 || currentIndex == 1) ? 120 : 140,
-                height: 35,
-                alignment: Alignment.center,
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+                height: 34,
+                width: 34,
                 clipBehavior: Clip.antiAlias,
                 decoration: ShapeDecoration(
-                  color: Colors.white,
+                  gradient: const LinearGradient(
+                    begin: Alignment(0.00, -1.00),
+                    end: Alignment(0, 1),
+                    colors: [Color(0xFFB509D0), Color(0xFF8D1B9F)],
+                  ),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10),
                   ),
                   shadows: const [
                     BoxShadow(
-                      color: Color(0x0C000000),
+                      color: Color(0x198D1B9F),
                       blurRadius: 25,
                       offset: Offset(0, 4),
                       spreadRadius: 0,
                     )
                   ],
                 ),
-                child: Row(
-                  // mainAxisSize: MainAxisSize.min,
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Container(
-                      width: 28,
-                      height: 28,
-                      clipBehavior: Clip.antiAlias,
-                      decoration: const BoxDecoration(),
-                      child: Stack(
-                        children: [
-                          Image.asset(MyIcons.mapPinIcon),
-                        ],
-                      ),
-                    ),
-                    Expanded(
-                      child: TextField(
-                        decoration: InputDecoration(
-                          border: InputBorder.none,
-                          focusedBorder: InputBorder.none,
-                          enabledBorder: InputBorder.none,
-                          errorBorder: InputBorder.none,
-                          disabledBorder: InputBorder.none,
-                          label: FittedBox(
-                            child: Text(
-                              'Current location',
-                              textAlign: TextAlign.start,
-                              style: GoogleFonts.montserrat(
-                                fontSize: 13,
-                                fontWeight: FontWeight.w500,
-                                color: const Color(0xFFBBB5BC),
-                                letterSpacing: -0.28,
-                              ),
-                            ),
-                          ),
-                        ),
-                        onTapOutside: (_) =>
-                            FocusManager.instance.primaryFocus!.unfocus(),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              if (currentIndex == 0 || currentIndex == 1) ...[
-                const SizedBox(width: 5),
-                customContainer(
-                  Image.asset(
-                    MyIcons.clipboard,
-                    color: Colors.purple,
-                    fit: BoxFit.fill,
+                child: Transform.flip(
+                  flipX: true,
+                  child: Image.asset(
+                    MyIcons.menuIcon1,
+                    height: 30,
+                    width: 30,
                   ),
                 ),
-              ],
+              ),
+              const SizedBox(width: 5),
+              Text(
+                'Elfaspace',
+                textAlign: TextAlign.center,
+                style: GoogleFonts.chelseaMarket(
+                  color: const Color(0xFFB509D0),
+                  fontSize: 20,
+                  fontWeight: FontWeight.w400,
+                  letterSpacing: -0.28,
+                ),
+              ),
+              const SizedBox(width: 10),
+              customContainer(
+                Image.asset(
+                  MyIcons.searchIcon,
+                  color: Colors.purple,
+                  fit: BoxFit.fill,
+                ),
+              ),
+              const SizedBox(width: 5),
+              customContainer(
+                Image.asset(
+                  MyIcons.clipboard,
+                  color: Colors.purple,
+                  fit: BoxFit.fill,
+                ),
+              ),
               const SizedBox(width: 5),
               customContainer(
                 Image.asset(
@@ -211,149 +137,87 @@ class _NewsTopBarState extends State<NewsTopBar> {
               ),
             ],
           ),
-          if (!isHidden) ...[
-            const SizedBox(height: 30),
-            SizedBox(
-              width: size.width * 0.9,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Container(
-                    width: size.width * 0.73,
-                    height: 50,
-                    padding:
-                        const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
-                    clipBehavior: Clip.antiAlias,
-                    decoration: ShapeDecoration(
-                      color: Colors.white,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      shadows: const [
-                        BoxShadow(
-                          color: Color(0x0C000000),
-                          blurRadius: 25,
-                          offset: Offset(0, 4),
-                          spreadRadius: 0,
-                        )
-                      ],
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        const SizedBox(width: 20),
-                        Image.asset(MyIcons.searchIcon),
-                        const SizedBox(width: 10),
-                        Expanded(
-                          child: TextField(
-                            decoration: InputDecoration(
-                              border: InputBorder.none,
-                              focusedBorder: InputBorder.none,
-                              enabledBorder: InputBorder.none,
-                              errorBorder: InputBorder.none,
-                              disabledBorder: InputBorder.none,
-                              label: Text(
-                                'Search',
-                                textAlign: TextAlign.center,
-                                style: GoogleFonts.montserrat(
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w500,
-                                  color: const Color(0xFFBBB5BC),
-                                  letterSpacing: -0.28,
-                                ),
-                              ),
-                            ),
-                            onTapOutside: (_) =>
-                                FocusManager.instance.primaryFocus!.unfocus(),
-                          ),
-                        ),
-                        const Spacer(),
-                        Image.asset(MyIcons.cancelIcon),
-                        const SizedBox(width: 10),
-                      ],
-                    ),
-                  ),
-                  Container(
-                    height: 40,
-                    width: 40,
-                    padding:
-                        const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
-                    clipBehavior: Clip.antiAlias,
-                    decoration: ShapeDecoration(
-                      gradient: const LinearGradient(
-                        begin: Alignment(0.00, -1.00),
-                        end: Alignment(0, 1),
-                        colors: [Color(0xFFB509D0), Color(0xFF8D1B9F)],
-                      ),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      shadows: const [
-                        BoxShadow(
-                          color: Color(0x198D1B9F),
-                          blurRadius: 25,
-                          offset: Offset(0, 4),
-                          spreadRadius: 0,
-                        )
-                      ],
-                    ),
-                    child: Image.asset(MyIcons.filterIcon),
-                  ),
-                ],
-              ),
-            ),
-          ],
-          const SizedBox(height: 30),
-          Container(
+          const SizedBox(height: 20),
+          SizedBox(
             width: 358,
             height: 28,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                InkWell(
-                  onTap: () => setBottomBarIndex(0),
-                  child: Image.asset(
-                    MyIcons.home,
-                    color: currentIndex == 0
-                        ? Colors.purple
-                        : const Color.fromRGBO(188, 188, 188, 1),
+                GestureDetector(
+                  onTap: () {
+                    setBottomBarIndex(0);
+                  },
+                  child: SizedBox(
+                    height: 50,
+                    width: 50,
+                    child: Image.asset(
+                      MyIcons.home,
+                      fit: BoxFit.contain,
+                      color: currentIndex == 0
+                          ? Colors.purple
+                          : const Color.fromRGBO(188, 188, 188, 1),
+                    ),
+                  ),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    setBottomBarIndex(1);
+                  },
+                  child: SizedBox(
+                    height: 50,
+                    width: 50,
+                    child: Image.asset(
+                      MyIcons.placesActive,
+                      color: currentIndex == 1
+                          ? Colors.purple
+                          : const Color.fromRGBO(188, 188, 188, 1),
+                    ),
+                  ),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    setBottomBarIndex(2);
+                  },
+                  child: SizedBox(
+                    height: 50,
+                    width: 50,
+                    child: Icon(
+                      Icons.add_circle_outline_rounded,
+                      color: currentIndex == 2
+                          ? Colors.purple
+                          : const Color.fromRGBO(188, 188, 188, 1),
+                    ),
                   ),
                 ),
                 InkWell(
-                  onTap: () => setBottomBarIndex(1),
-                  child: Image.asset(
-                    MyIcons.placesActive,
-                    color: currentIndex == 1
-                        ? Colors.purple
-                        : const Color.fromRGBO(188, 188, 188, 1),
+                  onTap: () {
+                    setBottomBarIndex(3);
+                  },
+                  child: SizedBox(
+                    height: 50,
+                    width: 50,
+                    child: Image.asset(
+                      MyIcons.videosActive,
+                      color: currentIndex == 3
+                          ? Colors.purple
+                          : const Color.fromRGBO(188, 188, 188, 1),
+                    ),
                   ),
                 ),
-                InkWell(
-                  onTap: () => setBottomBarIndex(2),
-                  child: Icon(
-                    Icons.add_circle_outline_rounded,
-                    color: currentIndex == 2
-                        ? Colors.purple
-                        : const Color.fromRGBO(188, 188, 188, 1),
-                  ),
-                ),
-                InkWell(
-                  onTap: () => setBottomBarIndex(3),
-                  child: Image.asset(
-                    MyIcons.videosActive,
-                    color: currentIndex == 3
-                        ? Colors.purple
-                        : const Color.fromRGBO(188, 188, 188, 1),
-                  ),
-                ),
-                InkWell(
-                  onTap: () => setBottomBarIndex(4),
-                  child: Image.asset(
-                    MyIcons.peoples,
-                    color: currentIndex == 4
-                        ? Colors.purple
-                        : const Color.fromRGBO(188, 188, 188, 1),
+                GestureDetector(
+                  onTap: () {
+                    setBottomBarIndex(4);
+                  },
+                  child: SizedBox(
+                    height: 50,
+                    width: 50,
+                    child: Image.asset(
+                      MyIcons.peoples,
+                      color: currentIndex == 4
+                          ? Colors.purple
+                          : const Color.fromRGBO(188, 188, 188, 1),
+                    ),
                   ),
                 ),
               ],

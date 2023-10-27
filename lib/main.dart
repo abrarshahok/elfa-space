@@ -1,19 +1,20 @@
-import 'package:elfa_main_dashboard/features/carsouelSlide/presentation/provider/dotChanger.dart';
-import 'package:elfa_main_dashboard/features/splash_screen/presentation/provider/splashScreenAnimator.dart';
-import 'package:elfa_main_dashboard/features/work_spaces/presentation/pages/work_space.dart';
-import 'package:elfa_main_dashboard/gym_panel/gym_screen/gym_home_page.dart';
-import 'package:elfa_main_dashboard/gym_panel/gym_screen/gym_screen.dart';
-import 'package:elfa_main_dashboard/news_feed/news/provider/screen_toggler.dart';
-import 'package:elfa_main_dashboard/news_feed/news/provider/search_and_filter_hider.dart';
 import 'package:flutter/material.dart';
-import './features/splash_screen/presentation/pages/splash_screen.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
-import 'features/carsouelSlide/presentation/provider/circleIndicatorProvider.dart';
-import 'features/enableLoction_screen/presentation/pages/enable_location_screen.dart';
-import 'features/carsouelSlide/presentation/pages/carsouelSlide.dart';
 import 'package:firebase_core/firebase_core.dart';
-import './features/carsouelSlide/presentation/provider/errorProvider.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '/school_panel/map/explore_on_map.dart';
+import '/features/carsouelSlide/presentation/provider/dot_changer.dart';
+import '/features/splash_screen/presentation/provider/splash_screen_animator.dart';
+import '/features/work_spaces/presentation/pages/work_space.dart';
+import '/gym_panel/gym_screen/gym_home_page.dart';
+import '/gym_panel/gym_screen/gym_screen.dart';
+import '/news_feed/news/provider/screen_toggler.dart';
+import './features/splash_screen/presentation/pages/splash_screen.dart';
+import 'features/carsouelSlide/presentation/provider/circle_indicator_provider.dart';
+import 'features/enableLoction_screen/presentation/pages/enable_location_screen.dart';
+import 'features/carsouelSlide/presentation/pages/carsouel_slide.dart';
+import 'features/carsouelSlide/presentation/provider/error_provider.dart';
+import '/school_panel/schools/school_info_page.dart';
 import 'gym_panel/features/booking/booking_info_page.dart';
 import 'gym_panel/features/booking/booking_page.dart';
 import 'gym_panel/features/booking/e_receipt_page.dart';
@@ -29,8 +30,6 @@ import 'gym_panel/features/gym/gym_direction/get_direction_page.dart';
 import 'gym_panel/features/gym/gym_direction/gym_direction_page.dart';
 import 'gym_panel/features/gym/gym_info/gym_info_page.dart';
 import 'news_feed/news/news_screen.dart';
-// import './features/homeScreen/homeScreen.dart';
-// import './features/work_spaces/presentation/pages/work_space.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -50,17 +49,16 @@ class MyApp extends StatelessWidget {
           ChangeNotifierProvider(create: (_) => errorProvider()),
           ChangeNotifierProvider(create: (_) => DotChanger()),
           ChangeNotifierProvider(create: (_) => SplashScreenAnimator()),
-          ChangeNotifierProvider(create: (_) => SearchAndFilterHider()),
           ChangeNotifierProvider(create: (_) => ScreenToggler()),
         ],
         child: MaterialApp(
           debugShowCheckedModeBanner: false,
           title: 'eflaspace',
           theme: ThemeData(
-            primarySwatch: Colors.blue,
+            primarySwatch: Colors.purple,
             brightness: Brightness.light,
           ),
-          home: SplashScreen(),
+          home: const SplashScreen(),
           routes: {
             enableLocationScreen.routeName: (ctx) =>
                 const enableLocationScreen(),
@@ -83,6 +81,8 @@ class MyApp extends StatelessWidget {
             GymDirectionPage.routeName: (context) => const GymDirectionPage(),
             GetDirectionPage.routeName: (context) => const GetDirectionPage(),
             ArrivedGymPage.routeName: (context) => const ArrivedGymPage(),
+            ExploreOnMap.routeName: (context) => const ExploreOnMap(),
+            SchoolInfoPage.routeName: (context) => const SchoolInfoPage(),
           },
         ),
       );

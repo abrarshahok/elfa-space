@@ -76,7 +76,7 @@ class GymNearestYou extends StatelessWidget {
           ),
           Expanded(
             child: ListView.builder(
-              padding: const EdgeInsets.only(bottom: 50),
+              padding: EdgeInsets.only(bottom: gymInfo.length * 55),
               itemCount: gymInfo.length,
               itemBuilder: (ctx, index) => _GymInfoContainer(
                 gymName: gymInfo[index]['title']!,
