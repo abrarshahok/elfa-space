@@ -1,10 +1,10 @@
-// packages
-import 'package:flutter/material.dart';
+
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:provider/provider.dart';
 import 'package:elfa_main_dashboard/features/splash_screen/domain/utilities/utils.dart';
-import '../../../news_feed/news/news_screen.dart';
+import '../../../news_feed/app/app_drawer.dart';
 import '../presentation/provider/circle_indicator_provider.dart';
 
 class AuthenticationMethods {
@@ -22,7 +22,7 @@ class AuthenticationMethods {
         .signInWithEmailAndPassword(email: email, password: password)
         .then((value) {
       Utils().showMsg('Signed In Successfully');
-      Navigator.pushReplacementNamed(ctx, NewsScreen.routeName);
+      Navigator.pushReplacementNamed(ctx, AppDrawer.routeName);
       Provider.of<CircleIndicatorProvider>(ctx, listen: false)
           .switchCircleIndicator();
     }).onError((error, stackTrace) {
@@ -59,7 +59,7 @@ class AuthenticationMethods {
     );
     await _auth.signInWithCredential(credential).then((value) {
       Utils().showMsg('Signed In Successfully');
-      Navigator.pushReplacementNamed(ctx, NewsScreen.routeName);
+      Navigator.pushReplacementNamed(ctx, AppDrawer.routeName);
       Provider.of<CircleIndicatorProvider>(ctx, listen: false)
           .switchCircleIndicator();
     }).onError((error, stackTrace) {

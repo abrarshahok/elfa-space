@@ -38,6 +38,24 @@ class MainDashboard extends StatelessWidget {
     'Others',
   ];
 
+  final postInfo = const [
+    {
+      'name': 'Claire Dangais',
+      'username': 'ClaireD15',
+      'post_image': MyImages.postImage1,
+    },
+    {
+      'name': 'Claire Dangais',
+      'username': 'ClaireD15',
+      'post_image': MyImages.postImage2,
+    },
+    {
+      'name': 'Claire Dangais',
+      'username': 'ClaireD15',
+      'post_image': MyImages.postImage3,
+    },
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -107,11 +125,15 @@ class MainDashboard extends StatelessWidget {
           ),
           SliverList(
             delegate: SliverChildBuilderDelegate(
-              childCount: categoriesList.length,
-              (BuildContext context, int index) => const Column(
+              childCount: postInfo.length,
+              (BuildContext context, int index) => Column(
                 children: [
-                  SizedBox(height: 10),
-                  Post(),
+                  const SizedBox(height: 10),
+                  Post(
+                    name: postInfo[index]['name'] as String,
+                    userName: postInfo[index]['username'] as String,
+                    postImage: postInfo[index]['post_image'] as String,
+                  ),
                 ],
               ),
             ),

@@ -43,6 +43,9 @@ dependencies:
   fluttertoast: ^8.2.2
   google_fonts: ^6.1.0
   google_sign_in: ^6.1.5
+  line_icons: ^2.0.3
+  hidden_drawer_menu: ^3.0.1
+  flutter_zoom_drawer: ^3.1.1
 
 dev_dependencies:
   flutter_test:

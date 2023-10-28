@@ -1,97 +1,48 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-
+import '../../constants/constants.dart';
 import 'live/live_videos.dart';
 import 'posts/all_posts.dart';
 import 'reels/reels.dart';
 
-class VideosDashboard extends StatefulWidget {
-  VideosDashboard({super.key});
-
-  @override
-  State<VideosDashboard> createState() => _VideosDashboardState();
-}
-
-class _VideosDashboardState extends State<VideosDashboard> {
-  setIndex(index) {
-    setState(() {
-      currentIndex = index;
-    });
-  }
-
-  final _pages = [
-    AllPosts(),
-    Reels(),
-    LiveVideos(),
-  ];
-
-  int currentIndex = 0;
+class VideosDashboard extends StatelessWidget {
+  const VideosDashboard({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      height: 1267,
+    return DefaultTabController(
+      length: 3,
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          const SizedBox(height: 15),
-          Container(
-            width: 358,
-            height: 28,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          TabBar(
+            indicatorColor: Colors.purple,
+            dividerColor: Colors.grey[200],
+            indicatorSize: TabBarIndicatorSize.label,
+            isScrollable: false,
+            unselectedLabelStyle: MyFonts.getPoppin(
+              color: const Color(0xFF9C9C9C),
+              fontSize: 15,
+              fontWeight: FontWeight.w500,
+            ),
+            labelStyle: MyFonts.getPoppin(
+              color: Colors.purple,
+              fontSize: 15,
+              fontWeight: FontWeight.w500,
+            ),
+            tabs: const [
+              Tab(text: 'Posts'),
+              Tab(text: 'Reels'),
+              Tab(text: 'Live'),
+            ],
+          ),
+          const Expanded(
+            child: TabBarView(
               children: [
-                const SizedBox(width: 1),
-                TextButton(
-                  onPressed: () => setIndex(0),
-                  child: Text(
-                    'Posts',
-                    style: GoogleFonts.poppins(
-                      color: currentIndex == 0
-                          ? Colors.purple
-                          : const Color(0xFF9C9C9C),
-                      fontSize: 14,
-                      fontWeight: FontWeight.w500,
-                      height: 0.07,
-                    ),
-                  ),
-                ),
-                TextButton(
-                  onPressed: () => setIndex(1),
-                  child: Text(
-                    'Reels',
-                    style: GoogleFonts.poppins(
-                      color: currentIndex == 1
-                          ? Colors.purple
-                          : const Color(0xFF9C9C9C),
-                      fontSize: 14,
-                      fontWeight: FontWeight.w500,
-                      height: 0.07,
-                    ),
-                  ),
-                ),
-                TextButton(
-                  onPressed: () => setIndex(2),
-                  child: Text(
-                    'Live',
-                    style: GoogleFonts.poppins(
-                      color: currentIndex == 2
-                          ? Colors.purple
-                          : const Color(0xFF9C9C9C),
-                      fontSize: 14,
-                      fontWeight: FontWeight.w500,
-                      height: 0.07,
-                    ),
-                  ),
-                ),
+                AllPosts(),
+                Reels(),
+                LiveVideos(),
               ],
             ),
-          ),
-          Expanded(
-            child: _pages[currentIndex],
-          ),
+          )
         ],
       ),
     );

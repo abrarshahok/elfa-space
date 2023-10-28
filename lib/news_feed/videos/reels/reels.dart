@@ -7,19 +7,25 @@ class Reels extends StatelessWidget {
   const Reels({super.key});
   final postInfo = const [
     {
-      'name': 'Jemma Rey',
-      'user_name': '@jemmarey',
-      'post': MyImages.baseImage,
-      'posted': '19 hours ago',
-      'user_image': MyImages.jemmaRey,
+      'name': 'Claire Dangais',
+      'username': 'ClaireD15',
+      'post_image': MyImages.baseImage,
     },
     {
-      'name': 'Eric Rey',
-      'user_name': '@ericrey',
-      'post': MyImages.baseImage,
-      'posted': '19 hours ago',
-      'user_image': MyImages.ericRey,
-    }
+      'name': 'Claire Dangais',
+      'username': 'ClaireD15',
+      'post_image': MyImages.postImage1,
+    },
+    {
+      'name': 'Claire Dangais',
+      'username': 'ClaireD15',
+      'post_image': MyImages.postImage2,
+    },
+    {
+      'name': 'Claire Dangais',
+      'username': 'ClaireD15',
+      'post_image': MyImages.postImage3,
+    },
   ];
   @override
   Widget build(BuildContext context) {
@@ -36,7 +42,7 @@ class Reels extends StatelessWidget {
                   height: 402,
                   child: ClipRRect(
                     child: Image.asset(
-                      postInfo[index]['post']!,
+                      postInfo[index]['post_image'] as String,
                       fit: BoxFit.fill,
                     ),
                   ),
@@ -50,8 +56,8 @@ class Reels extends StatelessWidget {
                         width: 53,
                         height: 53,
                         decoration: ShapeDecoration(
-                          image: DecorationImage(
-                            image: AssetImage(postInfo[index]['user_image']!),
+                          image: const DecorationImage(
+                            image: AssetImage(MyImages.claire),
                             fit: BoxFit.cover,
                           ),
                           shape: RoundedRectangleBorder(
@@ -66,7 +72,7 @@ class Reels extends StatelessWidget {
                           Row(
                             children: [
                               Text(
-                                postInfo[index]['name']!,
+                                postInfo[index]['name'] as String,
                                 style: GoogleFonts.plusJakartaSans(
                                   color: Colors.white,
                                   fontSize: 18,
@@ -77,7 +83,7 @@ class Reels extends StatelessWidget {
                             ],
                           ),
                           Text(
-                            postInfo[index]['posted']!,
+                            '@${postInfo[index]['username']}',
                             style: GoogleFonts.plusJakartaSans(
                               color: Colors.white,
                               fontSize: 14,

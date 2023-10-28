@@ -29,6 +29,7 @@ import 'gym_panel/features/gym/gym_direction/arrived_gym_page.dart';
 import 'gym_panel/features/gym/gym_direction/get_direction_page.dart';
 import 'gym_panel/features/gym/gym_direction/gym_direction_page.dart';
 import 'gym_panel/features/gym/gym_info/gym_info_page.dart';
+import 'news_feed/app/app_drawer.dart';
 import 'news_feed/news/news_screen.dart';
 
 void main() async {
@@ -60,11 +61,11 @@ class MyApp extends StatelessWidget {
           ),
           home: const SplashScreen(),
           routes: {
-            enableLocationScreen.routeName: (ctx) =>
-                const enableLocationScreen(),
+            EnableLocationScreen.routeName: (ctx) =>
+                const EnableLocationScreen(),
             CarsouelSlide.routeName: (ctx) => const CarsouelSlide(),
             WorkSpace.routeName: (ctx) => WorkSpace(),
-            NewsScreen.routeName: (context) => NewsScreen(),
+            NewsScreen.routeName: (context) =>const NewsScreen(),
             GymHomePage.routeName: (context) => GymHomePage(),
             GymScreen.routeName: (context) => GymScreen(),
             GymFilters.routeName: (context) => GymFilters(),
@@ -83,6 +84,7 @@ class MyApp extends StatelessWidget {
             ArrivedGymPage.routeName: (context) => const ArrivedGymPage(),
             ExploreOnMap.routeName: (context) => const ExploreOnMap(),
             SchoolInfoPage.routeName: (context) => const SchoolInfoPage(),
+            AppDrawer.routeName: (context) =>  AppDrawer(),
           },
         ),
       );

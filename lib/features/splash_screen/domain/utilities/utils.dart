@@ -13,7 +13,7 @@ class Utils {
           .triggerAnimation();
 
       Timer(const Duration(milliseconds: 400), () {
-        Navigator.pushNamed(context, enableLocationScreen.routeName);
+        Navigator.pushNamed(context, EnableLocationScreen.routeName);
       });
     });
 

@@ -7,12 +7,43 @@ class LiveVideos extends StatelessWidget {
   const LiveVideos();
   final postInfo = const [
     {
-      'name': 'Jemma Rey',
-      'post': MyImages.baseImage,
+      'name': 'Claire Dangais',
       'audience': '5.6k',
-      'user_image': MyImages.jemmaRey,
+      'post_image': MyImages.live1,
+      'user_image': MyImages.claire,
+    },
+    {
+      'name': 'Claire Dangais',
+      'audience': '5.6k',
+      'post_image': MyImages.live2,
+      'user_image': MyImages.claire,
+    },
+    {
+      'name': 'Claire Dangais',
+      'audience': '5.6k',
+      'post_image': MyImages.live3,
+      'user_image': MyImages.claire,
+    },
+    {
+      'name': 'Claire Dangais',
+      'audience': '5.6k',
+      'post_image': MyImages.live1,
+      'user_image': MyImages.claire,
+    },
+    {
+      'name': 'Claire Dangais',
+      'audience': '5.6k',
+      'post_image': MyImages.live2,
+      'user_image': MyImages.claire,
+    },
+    {
+      'name': 'Claire Dangais',
+      'audience': '5.6k',
+      'post_image': MyImages.live3,
+      'user_image': MyImages.claire,
     },
   ];
+
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.sizeOf(context);
@@ -27,7 +58,7 @@ class LiveVideos extends StatelessWidget {
           childAspectRatio: size.height * 1 / size.width * 0.28,
           crossAxisSpacing: 10,
         ),
-        itemCount: 6,
+        itemCount: postInfo.length,
         itemBuilder: (ctx, index) => Column(
           children: [
             Stack(
@@ -40,7 +71,7 @@ class LiveVideos extends StatelessWidget {
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(7),
                     child: Image.asset(
-                      MyImages.baseImage,
+                      postInfo[index]['post_image'] as String,
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -51,7 +82,7 @@ class LiveVideos extends StatelessWidget {
                   child: Row(
                     children: [
                       Container(
-                        width: 48,
+                        width: 50,
                         height: 22,
                         alignment: Alignment.center,
                         decoration: ShapeDecoration(
@@ -76,9 +107,9 @@ class LiveVideos extends StatelessWidget {
                           ),
                         ),
                       ),
-                      const SizedBox(width: 5),
+                      const SizedBox(width: 8),
                       Container(
-                        width: 40,
+                        width: 50,
                         height: 20,
                         alignment: Alignment.center,
                         decoration: ShapeDecoration(
@@ -104,7 +135,7 @@ class LiveVideos extends StatelessWidget {
                             ),
                             const SizedBox(width: 2),
                             Text(
-                              '5.6k',
+                              postInfo[index]['audience'] as String,
                               style: GoogleFonts.plusJakartaSans(
                                 color: Colors.white,
                                 fontSize: 10,
@@ -136,7 +167,7 @@ class LiveVideos extends StatelessWidget {
                 ),
                 const SizedBox(width: 10),
                 Text(
-                  'Claire Dongais',
+                  postInfo[index]['name'] as String,
                   style: GoogleFonts.poppins(
                     color: Colors.black,
                     fontSize: 13,

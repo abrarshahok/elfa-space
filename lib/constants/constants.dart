@@ -80,6 +80,17 @@ class MyImages {
   static const String pencil = 'assets/images/pencil.jpeg';
   static const String teacher = 'assets/images/teacher.jpeg';
   static const String direction = 'assets/images/direction.png';
+  static const String postImage1 = 'assets/images/postimage1.png';
+  static const String postImage2 = 'assets/images/postimage2.png';
+  static const String postImage3 = 'assets/images/postimage3.png';
+  static const String live1 = 'assets/images/live1.png';
+  static const String live2 = 'assets/images/live2.png';
+  static const String live3 = 'assets/images/live3.png';
+  static const String influencer1 = 'assets/images/influencer1.png';
+  static const String influencer2 = 'assets/images/influencer2.png';
+  static const String influencer3 = 'assets/images/influencer3.png';
+  static const String influencer4 = 'assets/images/influencer4.png';
+  static const String influencer5 = 'assets/images/influencer5.png';
 }
 
 class MyFonts {

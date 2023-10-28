@@ -7,34 +7,35 @@ class AllPosts extends StatelessWidget {
 
   final postInfo = const [
     {
-      'name': 'Jemma Rey',
-      'user_name': '@jemmarey',
-      'post': MyImages.post1,
-      'posted': '19 hours ago',
-      'description':
-          '''Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,molestiae quas vel sint commodi repudiandae.!''',
-      'user_image': MyImages.jemmaRey,
+      'name': 'Claire Dangais',
+      'username': 'ClaireD15',
+      'post_image': MyImages.postImage1,
     },
     {
-      'name': 'Eric Rey',
-      'user_name': '@ericrey',
-      'post': MyImages.post2,
-      'posted': '19 hours ago',
-      'description':
-          '''Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,molestiae quas vel sint commodi repudiandae.!''',
-      'user_image': MyImages.ericRey,
-    }
+      'name': 'Claire Dangais',
+      'username': 'ClaireD15',
+      'post_image': MyImages.postImage2,
+    },
+    {
+      'name': 'Claire Dangais',
+      'username': 'ClaireD15',
+      'post_image': MyImages.postImage3,
+    },
   ];
 
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
       itemCount: postInfo.length,
-      itemBuilder: (ctx, index) => const Column(
+      itemBuilder: (ctx, index) => Column(
         children: [
-          SizedBox(height: 10),
-          Post(),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
+          Post(
+            name: postInfo[index]['name'] as String,
+            userName: postInfo[index]['username'] as String,
+            postImage: postInfo[index]['post_image'] as String,
+          ),
+          const SizedBox(height: 10),
         ],
       ),
     );

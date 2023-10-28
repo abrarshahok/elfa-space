@@ -38,7 +38,7 @@ class _LogInFormState extends State<LogInForm>
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: MediaQuery.of(context).size.height * 0.81.h,
+      height: MediaQuery.of(context).size.height * 0.69.h,
       child: Padding(
         padding: EdgeInsets.all(26.h),
         child: Form(

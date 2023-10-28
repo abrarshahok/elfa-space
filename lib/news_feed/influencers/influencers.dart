@@ -5,32 +5,66 @@ import '../../constants/constants.dart';
 import '/news_feed/influencers/trending_influencers.dart';
 
 class Influencers extends StatelessWidget {
-  const Influencers({super.key});
+  Influencers({super.key});
 
-  final profileList = const [
+  final trendingInfluencers = [
     {
       'user_image': MyImages.claire,
       'name': 'Claire Dongais',
       'user_name': '@clairedongais',
-      'image': MyImages.baseImage,
+      'image': MyImages.influencer1,
     },
     {
       'user_image': MyImages.claire,
       'name': 'Claire Dongais',
       'user_name': '@clairedongais',
-      'image': MyImages.baseImage,
+      'image': MyImages.influencer2,
     },
     {
       'user_image': MyImages.claire,
       'name': 'Claire Dongais',
       'user_name': '@clairedongais',
-      'image': MyImages.baseImage,
+      'image': MyImages.influencer3,
+    },
+  ];
+  final topInfluencers = [
+    {
+      'user_image': MyImages.claire,
+      'name': 'Claire Dongais',
+      'user_name': '@clairedongais',
+      'image': MyImages.influencer4,
     },
     {
       'user_image': MyImages.claire,
       'name': 'Claire Dongais',
       'user_name': '@clairedongais',
-      'image': MyImages.baseImage,
+      'image': MyImages.influencer5,
+    },
+    {
+      'user_image': MyImages.claire,
+      'name': 'Claire Dongais',
+      'user_name': '@clairedongais',
+      'image': MyImages.influencer2,
+    },
+  ];
+  final nearbyInfluencers = [
+    {
+      'user_image': MyImages.claire,
+      'name': 'Claire Dongais',
+      'user_name': '@clairedongais',
+      'image': MyImages.influencer3,
+    },
+    {
+      'user_image': MyImages.claire,
+      'name': 'Claire Dongais',
+      'user_name': '@clairedongais',
+      'image': MyImages.influencer4,
+    },
+    {
+      'user_image': MyImages.claire,
+      'name': 'Claire Dongais',
+      'user_name': '@clairedongais',
+      'image': MyImages.influencer5,
     },
   ];
 
@@ -49,15 +83,15 @@ class Influencers extends StatelessWidget {
                 children: [
                   const SizedBox(height: 10),
                   TrendingInfluencers(
-                    profileList: profileList,
+                    profileList: trendingInfluencers,
                   ),
                   const SizedBox(height: 10),
                   TopInfluencers(
-                    profileList: profileList,
+                    profileList: topInfluencers,
                   ),
                   const SizedBox(height: 10),
                   InfluencersNearby(
-                    profileList: profileList,
+                    profileList: nearbyInfluencers,
                   ),
                   const SizedBox(height: 10),
                 ],

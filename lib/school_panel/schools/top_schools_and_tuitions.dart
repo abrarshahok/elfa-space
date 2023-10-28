@@ -131,7 +131,7 @@ class TopSchoolsAndTuitions extends StatelessWidget {
         ),
         const SizedBox(height: 10),
         SizedBox(
-          height: MediaQuery.sizeOf(context).height * 0.31,
+          height: MediaQuery.sizeOf(context).height * 0.29,
           width: double.infinity,
           child: ListView.builder(
             itemCount: 4,

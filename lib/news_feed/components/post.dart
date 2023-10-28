@@ -6,7 +6,14 @@ import '/../../constants/constants.dart';
 class Post extends StatelessWidget {
   const Post({
     super.key,
+    required this.name,
+    required this.userName,
+    required this.postImage,
   });
+
+  final String name;
+  final String userName;
+  final String postImage;
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +46,7 @@ class Post extends StatelessWidget {
                   text: TextSpan(
                     children: [
                       TextSpan(
-                        text: 'Claire Dangais\n',
+                        text: '$name\n',
                         style: GoogleFonts.poppins(
                           color: Colors.black,
                           fontSize: 17.16,
@@ -48,7 +55,7 @@ class Post extends StatelessWidget {
                         ),
                       ),
                       TextSpan(
-                        text: '@ClaireD15',
+                        text: '@$userName',
                         style: GoogleFonts.poppins(
                           color: const Color(0xFF6C7A9C),
                           fontSize: 15.14,
@@ -76,7 +83,7 @@ class Post extends StatelessWidget {
                   height: 358,
                   width: double.infinity,
                   child: Image.asset(
-                    MyImages.sky,
+                    postImage,
                     fit: BoxFit.cover,
                   ),
                 ),

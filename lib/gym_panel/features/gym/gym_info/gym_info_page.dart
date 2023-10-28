@@ -157,7 +157,7 @@ class GymInfoPage extends StatelessWidget {
                       TabBar(
                         indicatorColor: Colors.purple,
                         unselectedLabelColor: Colors.black,
-                        dividerColor: Colors.black,
+                        dividerColor: Colors.grey[200],
                         labelColor: Colors.purple,
                         indicatorSize: TabBarIndicatorSize.label,
                         isScrollable: false,
