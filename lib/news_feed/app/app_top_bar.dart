@@ -43,9 +43,14 @@ class AppTopBar extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          GestureDetector(
+          InkWell(
             onTap: () {
-              ZoomDrawer.of(context)!.toggle();
+              final drawerState = ZoomDrawer.of(context);
+              if (drawerState!.isOpen()) {
+                drawerState.close();
+              } else {
+                drawerState.open();
+              }
             },
             child: Container(
               height: 34,

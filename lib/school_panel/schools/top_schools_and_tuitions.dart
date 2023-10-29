@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-import '../../news_feed/news/provider/screen_toggler.dart';
+import '../../features/exploreScreen/screen_toggler.dart';
 import 'school_info_page.dart';
 
 class TopSchoolsAndTuitions extends StatelessWidget {
@@ -34,7 +34,7 @@ class TopSchoolsAndTuitions extends StatelessWidget {
             InkWell(
               onTap: () {
                 Provider.of<ScreenToggler>(context, listen: false)
-                    .toggle(Screens.explore);
+                    .toggle(Screens.exploreScreen);
               },
               child: Container(
                 width: 24,

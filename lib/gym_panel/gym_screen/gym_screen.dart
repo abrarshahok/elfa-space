@@ -1,4 +1,5 @@
-import 'package:elfa_main_dashboard/news_feed/news/provider/screen_toggler.dart';
+import '/gym_panel/features/filters/gym_filters.dart';
+import '../../features/exploreScreen/screen_toggler.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -19,7 +20,7 @@ class GymScreen extends StatelessWidget {
             InkWell(
               onTap: () {
                 Provider.of<ScreenToggler>(context, listen: false)
-                    .toggle(Screens.explore);
+                    .toggle(Screens.exploreScreen);
               },
               child: Container(
                 width: 24,
@@ -126,31 +127,35 @@ class GymScreen extends StatelessWidget {
                   ],
                 ),
               ),
-              Container(
-                height: 40,
-                width: 40,
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
-                clipBehavior: Clip.antiAlias,
-                decoration: ShapeDecoration(
-                  gradient: const LinearGradient(
-                    begin: Alignment(0.00, -1.00),
-                    end: Alignment(0, 1),
-                    colors: [Color(0xFFB509D0), Color(0xFF8D1B9F)],
+              GestureDetector(
+                onTap: () =>
+                    Navigator.of(context).pushNamed(GymFilters.routeName),
+                child: Container(
+                  height: 40,
+                  width: 40,
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+                  clipBehavior: Clip.antiAlias,
+                  decoration: ShapeDecoration(
+                    gradient: const LinearGradient(
+                      begin: Alignment(0.00, -1.00),
+                      end: Alignment(0, 1),
+                      colors: [Color(0xFFB509D0), Color(0xFF8D1B9F)],
+                    ),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    shadows: const [
+                      BoxShadow(
+                        color: Color(0x198D1B9F),
+                        blurRadius: 25,
+                        offset: Offset(0, 4),
+                        spreadRadius: 0,
+                      )
+                    ],
                   ),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  shadows: const [
-                    BoxShadow(
-                      color: Color(0x198D1B9F),
-                      blurRadius: 25,
-                      offset: Offset(0, 4),
-                      spreadRadius: 0,
-                    )
-                  ],
+                  child: Image.asset(MyIcons.filterIcon),
                 ),
-                child: Image.asset(MyIcons.filterIcon),
               ),
             ],
           ),

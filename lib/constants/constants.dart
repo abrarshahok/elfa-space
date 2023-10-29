@@ -91,6 +91,12 @@ class MyImages {
   static const String influencer3 = 'assets/images/influencer3.png';
   static const String influencer4 = 'assets/images/influencer4.png';
   static const String influencer5 = 'assets/images/influencer5.png';
+  static const String food1 = 'assets/images/food1.png';
+  static const String food2 = 'assets/images/food2.jpeg';
+  static const String food3 = 'assets/images/food3.png';
+  static const String food4 = 'assets/images/food4.jpeg';
+  static const String food5 = 'assets/images/food5.jpeg';
+  static const String food6 = 'assets/images/food6.jpeg';
 }
 
 class MyFonts {

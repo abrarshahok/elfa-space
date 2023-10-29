@@ -1,10 +1,11 @@
-import 'package:elfa_main_dashboard/features/exploreScreen/explore_categories.dart';
-import 'package:elfa_main_dashboard/gym_panel/gym_screen/gym_screen.dart';
-import 'package:elfa_main_dashboard/school_panel/schools/schools_screen.dart';
+import '/features/exploreScreen/explore_categories.dart';
+import '/food_panel/home/food_panel_home.dart';
+import '/gym_panel/gym_screen/gym_screen.dart';
+import '/school_panel/schools/schools_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../../news_feed/news/provider/screen_toggler.dart';
+import 'screen_toggler.dart';
 
 class ExploreScreen extends StatefulWidget {
   const ExploreScreen({super.key});
@@ -14,10 +15,12 @@ class ExploreScreen extends StatefulWidget {
 }
 
 Widget getScreens(Screens screen) {
-  if (screen == Screens.gyms) {
+  if (screen == Screens.gymPanel) {
     return GymScreen();
-  } else if (screen == Screens.schools) {
+  } else if (screen == Screens.schoolPanel) {
     return const SchoolsScreen();
+  } else if (screen == Screens.foodPanel) {
+    return const FoodPanelHome();
   } else {
     return ExploreCategories();
   }

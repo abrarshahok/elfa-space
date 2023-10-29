@@ -4,7 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import '../../constants.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../news_feed/news/provider/screen_toggler.dart';
+import 'screen_toggler.dart';
 import '../work_spaces/presentation/pages/work_space.dart';
 
 class ExploreCategories extends StatelessWidget {
@@ -15,37 +15,37 @@ class ExploreCategories extends StatelessWidget {
         "text": "workspaces",
         "image": "assets/splashAssets/carsouelAssets/slide1.png",
         "route": WorkSpace.routeName,
-        'toggle': Screens.explore,
+        'toggle': "",
       },
       {
         "text": "     Schools",
         "image": "assets/splashAssets/carsouelAssets/slide2.png",
         "route": WorkSpace.routeName,
-        'toggle': Screens.explore,
+        'toggle': Screens.schoolPanel,
       },
       {
         "text": "   Local Food ",
         "image": "assets/splashAssets/carsouelAssets/slide3.png",
         "route": WorkSpace.routeName,
-        'toggle': Screens.explore,
+        'toggle': Screens.foodPanel,
       },
       {
         "text": "       Gyms",
         "image": "assets/splashAssets/carsouelAssets/slide4.jpeg",
         "route": GymScreen.routeName,
-        'toggle': Screens.explore,
+        'toggle': Screens.gymPanel,
       },
       {
         "text": "      Salons ",
         "image": "assets/splashAssets/carsouelAssets/slide5.png",
         "route": WorkSpace.routeName,
-        'toggle': Screens.explore,
+        'toggle': "",
       },
       {
         "text": "Marriage Halls",
         "image": "assets/splashAssets/carsouelAssets/slide6.png",
         "route": WorkSpace.routeName,
-        'toggle': Screens.explore,
+        'toggle': "",
       },
     ];
 
@@ -80,23 +80,18 @@ class ExploreCategories extends StatelessWidget {
                 ),
                 itemCount: gridtileData.length,
                 itemBuilder: (_, index) {
-                  return moduelTile(gridtileData[index]['image'] as String,
-                      gridtileData[index]['text'] as String, () {
-                    if (gridtileData[index]['text']
-                        .toString()
-                        .contains("Gyms")) {
-                      Provider.of<ScreenToggler>(context, listen: false)
-                          .toggle(Screens.gyms);
-                    } else if (gridtileData[index]['text']
-                        .toString()
-                        .contains("Schools")) {
-                      Provider.of<ScreenToggler>(context, listen: false)
-                          .toggle(Screens.schools);
-                    } else {
-                      Navigator.of(context)
-                          .pushNamed(gridtileData[index]['route']);
-                    }
-                  });
+                  return moduleTile(
+                      image: gridtileData[index]['image'] as String,
+                      text: gridtileData[index]['text'] as String,
+                      ontap: () {
+                        if (gridtileData[index]['toggle'] != "") {
+                          Provider.of<ScreenToggler>(context, listen: false)
+                              .toggle(gridtileData[index]['toggle']);
+                        } else {
+                          Navigator.of(context)
+                              .pushNamed(gridtileData[index]['route']);
+                        }
+                      });
                 },
               ),
             )
@@ -106,7 +101,11 @@ class ExploreCategories extends StatelessWidget {
     );
   }
 
-  GestureDetector moduelTile(String image, String text, VoidCallback ontap) {
+  GestureDetector moduleTile({
+    required String image,
+    required String text,
+    required VoidCallback ontap,
+  }) {
     return GestureDetector(
       onTap: ontap,
       child: Stack(

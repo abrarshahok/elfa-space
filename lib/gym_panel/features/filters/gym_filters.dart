@@ -243,7 +243,6 @@ class _GymFiltersState extends State<GymFilters> {
             Row(
               children: [
                 rating(5),
-                const SizedBox(width: 10),
                 Text(
                   '4.5 and above',
                   textAlign: TextAlign.center,
@@ -259,7 +258,6 @@ class _GymFiltersState extends State<GymFilters> {
             Row(
               children: [
                 rating(4.3),
-                const SizedBox(width: 10),
                 Text(
                   '4.0 - 4.4',
                   textAlign: TextAlign.center,
@@ -275,7 +273,6 @@ class _GymFiltersState extends State<GymFilters> {
             Row(
               children: [
                 rating(3.6),
-                const SizedBox(width: 10),
                 Text(
                   '3.5 - 3.9',
                   textAlign: TextAlign.center,
@@ -291,7 +288,6 @@ class _GymFiltersState extends State<GymFilters> {
             Row(
               children: [
                 rating(3.0),
-                const SizedBox(width: 10),
                 Text(
                   '3.0 - 3.4',
                   textAlign: TextAlign.center,

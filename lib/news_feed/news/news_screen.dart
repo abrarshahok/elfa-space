@@ -27,6 +27,9 @@ class NewsScreen extends StatelessWidget {
                   TabBar(
                     indicatorColor: Colors.white,
                     dividerColor: Colors.white,
+                    labelColor: Colors.purple,
+                    unselectedLabelColor:
+                        const Color.fromRGBO(188, 188, 188, 1),
                     indicatorSize: TabBarIndicatorSize.label,
                     isScrollable: false,
                     unselectedLabelStyle: MyFonts.getPoppin(
