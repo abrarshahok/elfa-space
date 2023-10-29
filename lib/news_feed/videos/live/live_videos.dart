@@ -46,16 +46,16 @@ class LiveVideos extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.sizeOf(context);
     return Container(
       padding: const EdgeInsets.only(top: 10),
       width: double.infinity,
       color: Colors.white,
       child: GridView.builder(
         padding: const EdgeInsets.only(left: 10, right: 10),
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        shrinkWrap: true,
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
-          childAspectRatio: size.height * 1 / size.width * 0.28,
+          childAspectRatio: 1 / 2,
           crossAxisSpacing: 10,
         ),
         itemCount: postInfo.length,

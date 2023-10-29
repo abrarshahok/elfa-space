@@ -1,12 +1,13 @@
-import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
-import '/news_feed/app/drawer_menu_screen.dart';
-import '/news_feed/news/news_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
+import '../news/news_screen.dart';
+import 'drawer_menu_screen.dart';
 
 class AppDrawer extends StatelessWidget {
   static const routeName = '/app-drawer';
-  AppDrawer({super.key});
+
   final zoomDrawerController = ZoomDrawerController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,7 +31,7 @@ class AppDrawer extends StatelessWidget {
           showShadow: true,
           angle: 0.0,
           drawerShadowsBackgroundColor: Colors.grey[300]!,
-          slideWidth: MediaQuery.of(context).size.width * 0.65,
+          slideWidth: MediaQuery.of(context).size.width * 0.7,
         ),
       ),
     );

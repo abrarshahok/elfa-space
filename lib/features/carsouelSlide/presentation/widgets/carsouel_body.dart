@@ -33,14 +33,10 @@ class CarsouelBody extends StatelessWidget {
             children: [
               Padding(
                 padding: EdgeInsets.only(top: 40.h),
-                child: SizedBox(
-                  height: 80.h,
-                  width: 260.w,
-                  child: Text(
-                    text1,
-                    textAlign: TextAlign.center,
-                    style: headingTheme,
-                  ),
+                child: Text(
+                  text1,
+                  textAlign: TextAlign.center,
+                  style: headingTheme,
                 ),
               ),
               SizedBox(

@@ -5,7 +5,10 @@ import 'package:flutter/material.dart';
 class DrawerMenuScreen extends StatelessWidget {
   const DrawerMenuScreen({super.key});
 
-  Widget customListTile({required IconData icon, required String title}) {
+  Widget customListTile({
+    required IconData icon,
+    required String title,
+  }) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
@@ -92,6 +95,83 @@ class DrawerMenuScreen extends StatelessWidget {
               customListTile(
                 icon: Icons.help_outline_rounded,
                 title: 'Help',
+              ),
+            ],
+          ),
+        ),
+        const Spacer(),
+        Container(
+          width: double.infinity,
+          height: 90,
+          margin: const EdgeInsets.only(left: 10, bottom: 10),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(11),
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Text(
+                'Version: 1.1',
+                style: MyFonts.getPoppin(
+                  color: const Color(0xFF737373),
+                  fontSize: 10,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+              Container(
+                width: double.infinity,
+                height: 60,
+                margin: const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+                decoration: ShapeDecoration(
+                  color: const Color(0x93D9D9D9),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(11),
+                  ),
+                ),
+                child: Row(
+                  children: [
+                    const SizedBox(width: 5),
+                    const CircleAvatar(
+                      radius: 15,
+                      backgroundImage: AssetImage(
+                        MyImages.claire,
+                      ),
+                    ),
+                    const SizedBox(width: 5),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            'Clair Dongais',
+                            style: MyFonts.getPoppin(
+                              color: Colors.black,
+                              fontSize: 12,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                          Text(
+                            'clairdongais@gmail.com',
+                            style: MyFonts.getPoppin(
+                              color: const Color(0xFF918F8F),
+                              fontSize: 8,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    const CircleAvatar(
+                      radius: 15,
+                      child: Icon(
+                        Icons.logout,
+                        color: Color(0xFF918F8F),
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ],
           ),

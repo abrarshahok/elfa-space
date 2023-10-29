@@ -10,6 +10,7 @@ import '/gym_panel/gym_screen/gym_home_page.dart';
 import '/gym_panel/gym_screen/gym_screen.dart';
 import '/news_feed/news/provider/screen_toggler.dart';
 import './features/splash_screen/presentation/pages/splash_screen.dart';
+import '/features/carsouelSlide/presentation/provider/drawer_state_provider.dart';
 import 'features/carsouelSlide/presentation/provider/circle_indicator_provider.dart';
 import 'features/enableLoction_screen/presentation/pages/enable_location_screen.dart';
 import 'features/carsouelSlide/presentation/pages/carsouel_slide.dart';
@@ -51,6 +52,7 @@ class MyApp extends StatelessWidget {
           ChangeNotifierProvider(create: (_) => DotChanger()),
           ChangeNotifierProvider(create: (_) => SplashScreenAnimator()),
           ChangeNotifierProvider(create: (_) => ScreenToggler()),
+          ChangeNotifierProvider(create: (_) => DrawerStateProvider()),
         ],
         child: MaterialApp(
           debugShowCheckedModeBanner: false,
@@ -65,7 +67,7 @@ class MyApp extends StatelessWidget {
                 const EnableLocationScreen(),
             CarsouelSlide.routeName: (ctx) => const CarsouelSlide(),
             WorkSpace.routeName: (ctx) => WorkSpace(),
-            NewsScreen.routeName: (context) =>const NewsScreen(),
+            NewsScreen.routeName: (context) => const NewsScreen(),
             GymHomePage.routeName: (context) => GymHomePage(),
             GymScreen.routeName: (context) => GymScreen(),
             GymFilters.routeName: (context) => GymFilters(),
@@ -84,7 +86,7 @@ class MyApp extends StatelessWidget {
             ArrivedGymPage.routeName: (context) => const ArrivedGymPage(),
             ExploreOnMap.routeName: (context) => const ExploreOnMap(),
             SchoolInfoPage.routeName: (context) => const SchoolInfoPage(),
-            AppDrawer.routeName: (context) =>  AppDrawer(),
+            AppDrawer.routeName: (context) => AppDrawer(),
           },
         ),
       );
