@@ -136,53 +136,6 @@ class SchoolsScreen extends StatelessWidget {
           ),
         ],
       ),
-      bottomNavigationBar: Container(
-        width: 391,
-        height: 80,
-        decoration: const ShapeDecoration(
-          color: Colors.white,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(10),
-              topRight: Radius.circular(10),
-            ),
-          ),
-          shadows: [
-            BoxShadow(
-              color: Color(0x26000000),
-              blurRadius: 25,
-              offset: Offset(0, -4),
-              spreadRadius: 0,
-            )
-          ],
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            customButton(
-              label: 'Home',
-              color: Colors.purple,
-              assetIcon: MyIcons.home,
-            ),
-            customButton(
-              label: 'Map',
-              color: const Color(0xFF31302C),
-              icon: Icons.map_outlined,
-            ),
-            customButton(
-              label: 'Favourite',
-              color: const Color(0xFF31302C),
-              icon: Icons.favorite_border_outlined,
-            ),
-            customButton(
-              label: 'Profile',
-              color: const Color(0xFF31302C),
-              icon: Icons.account_box_outlined,
-            ),
-          ],
-        ),
-      ),
     );
   }
 

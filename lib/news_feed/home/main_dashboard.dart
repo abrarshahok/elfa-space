@@ -124,8 +124,10 @@ class MainDashboard extends StatelessWidget {
             ),
           ),
           SliverList(
+            
             delegate: SliverChildBuilderDelegate(
               childCount: postInfo.length,
+              
               (BuildContext context, int index) => Column(
                 children: [
                   const SizedBox(height: 10),

@@ -12,7 +12,6 @@ import 'features/carsouelSlide/presentation/provider/circle_indicator_provider.d
 import 'features/enableLoction_screen/presentation/pages/enable_location_screen.dart';
 import 'features/carsouelSlide/presentation/pages/carsouel_slide.dart';
 import 'features/carsouelSlide/presentation/provider/error_provider.dart';
-import 'food_panel/home/food_panel_home.dart';
 import 'school_panel/map/explore_on_map.dart';
 import 'school_panel/schools/school_info_page.dart';
 import 'gym_panel/gym_screen/gym_home_page.dart';
@@ -26,13 +25,26 @@ import 'gym_panel/features/booking/payment_methods/payment_methods.dart';
 import 'gym_panel/features/booking/review_summary_page.dart';
 import 'gym_panel/features/booking/select_package_page.dart';
 import 'gym_panel/features/booking/select_trainer_page.dart';
-import 'gym_panel/features/filters/gym_filters.dart';
 import 'gym_panel/features/gym/gym_direction/arrived_gym_page.dart';
 import 'gym_panel/features/gym/gym_direction/get_direction_page.dart';
 import 'gym_panel/features/gym/gym_direction/gym_direction_page.dart';
+import 'gym_panel/features/filters/gym_filters.dart';
 import 'gym_panel/features/gym/gym_info/gym_info_page.dart';
 import 'news_feed/app/app_drawer.dart';
 import 'news_feed/news/news_screen.dart';
+import 'food_panel/home/food_panel_home.dart';
+import 'food_panel/features/cart/cart_screen.dart';
+import 'food_panel/screens/groceries/groceries.dart';
+import 'food_panel/screens/meat_shops/meat_shops.dart';
+import 'food_panel/features/order/order_screen.dart';
+import 'food_panel/screens/info_screens/all_shops.dart';
+import 'food_panel/screens/bakeries/bakeries.dart';
+import 'food_panel/screens/chicken_shops/chicken_shops.dart';
+import 'food_panel/screens/info_screens/shop_items_screen.dart';
+import 'food_panel/features/order/order_placed_screen.dart';
+import 'food_panel/features/order/track_order_screen.dart';
+import 'food_panel/screens/local_food_shops/local_food_shops.dart';
+import 'food_panel/screens/dairy_shops/dairy_shops.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -89,6 +101,18 @@ class MyApp extends StatelessWidget {
             SchoolInfoPage.routeName: (context) => const SchoolInfoPage(),
             AppDrawer.routeName: (context) => AppDrawer(),
             FoodPanelHome.routeName: (context) => const FoodPanelHome(),
+            ChickenShops.routeName: (context) => const ChickenShops(),
+            AllShops.routeName: (context) => const AllShops(),
+            ShopItemsScreen.routeName: (context) => const ShopItemsScreen(),
+            CartScreen.routeName: (context) => const CartScreen(),
+            OrderScreen.routeName: (context) => const OrderScreen(),
+            OrderPlacedScreen.routeName: (context) => const OrderPlacedScreen(),
+            TrackOrderScreen.routeName: (context) => const TrackOrderScreen(),
+            LocalFoodShops.routeName: (context) => const LocalFoodShops(),
+            MeatShops.routeName: (context) => const MeatShops(),
+            DairyShops.routeName: (context) => const DairyShops(),
+            Bakeries.routeName: (context) => const Bakeries(),
+            Groceries.routeName: (context) => const Groceries(),
           },
         ),
       );

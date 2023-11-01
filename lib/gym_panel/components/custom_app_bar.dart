@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../../constants/constants.dart';
 
-
-
 class CustomAppBar extends StatelessWidget {
   final String title;
 
@@ -33,13 +31,13 @@ class CustomAppBar extends StatelessWidget {
             icon: const Icon(Icons.arrow_back),
           ),
         ),
-        const SizedBox(width: 70),
+        const SizedBox(width: 20),
         Text(
           title,
           textAlign: TextAlign.center,
           style: MyFonts.getPoppin(
             color: Colors.black,
-            fontSize: 18,
+            fontSize: 25,
             fontWeight: FontWeight.w500,
           ),
         ),

@@ -97,6 +97,25 @@ class MyImages {
   static const String food4 = 'assets/images/food4.jpeg';
   static const String food5 = 'assets/images/food5.jpeg';
   static const String food6 = 'assets/images/food6.jpeg';
+  static const String shop1 = 'assets/images/shop1.png';
+  static const String shop2 = 'assets/images/shop2.png';
+  static const String shop3 = 'assets/images/shop3.png';
+  static const String shop4 = 'assets/images/shop4.png';
+  static const String shop5 = 'assets/images/shop5.png';
+  static const String shop6 = 'assets/images/shop6.png';
+  static const String chicken = 'assets/images/chicken.jpeg';
+  static const String localFood1 = 'assets/images/local1.jpeg';
+  static const String localFood2 = 'assets/images/local2.jpeg';
+  static const String burger = 'assets/images/burger.jpg';
+  static const String meat1 = 'assets/images/meat1.jpeg';
+  static const String meat2 = 'assets/images/meat2.jpeg';
+  static const String dairy1 = 'assets/images/dairy1.jpeg';
+  static const String dairy2 = 'assets/images/dairy2.jpeg';
+  static const String bakery1 = 'assets/images/bakery1.jpeg';
+  static const String bakery2 = 'assets/images/bakery2.png';
+  static const String groceries1 = 'assets/images/groceries1.png';
+  static const String groceries2 = 'assets/images/groceries2.png';
+  static const String yellowLabel = 'assets/images/item.jpeg';
 }
 
 class MyFonts {
