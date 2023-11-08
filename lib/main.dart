@@ -1,3 +1,5 @@
+import 'package:elfa_main_dashboard/features/carsouelSlide/presentation/widgets/login_form.dart';
+import 'package:elfa_main_dashboard/features/carsouelSlide/presentation/widgets/signup_form.dart';
 import 'package:elfa_main_dashboard/marriage_hall_panel/components/map/hall_map.dart';
 
 import '/marriage_hall_panel/features/book_hall/confirm_info_page.dart';
@@ -125,6 +127,8 @@ class MyApp extends StatelessWidget {
             ConfirmInfoPage.routeName: (context) => ConfirmInfoPage(),
             BookingDonePage.routeName: (context) => const BookingDonePage(),
             HallMap.routeName: (context) => HallMap(),
+            LogInForm.routeName: (context) => const LogInForm(),
+            SignUpForm.routeName: (context) => const SignUpForm(),
           },
         ),
       );

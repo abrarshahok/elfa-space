@@ -1,3 +1,4 @@
+import 'package:elfa_main_dashboard/constants/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../constants.dart';
@@ -10,6 +11,7 @@ import 'package:provider/provider.dart';
 import '../../data/authentication_methods.dart';
 
 class LogInForm extends StatefulWidget {
+  static const routeName = '/login-screen';
   const LogInForm({
     Key? key,
   }) : super(key: key);
@@ -35,219 +37,235 @@ class _LogInFormState extends State<LogInForm>
     super.dispose();
   }
 
+  bool _showPassword = false;
+
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: MediaQuery.of(context).size.height * 0.69.h,
-      child: Padding(
-        padding: EdgeInsets.all(26.h),
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        elevation: 0,
+      ),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Form(
           key: _formKey,
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                GestureDetector(
-                  onTap: () {
-                    Navigator.pop(context);
-                  },
-                  child: Container(
-                    height: 30.h,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      gradient: const LinearGradient(
-                        colors: kgradientColors,
-                        begin: Alignment.topCenter,
-                        end: Alignment.bottomCenter,
-                      ),
-                    ),
-                    width: 50.w,
-                    child: const Icon(
-                      Icons.arrow_back_ios_new_rounded,
-                      // color: kPrimaryColor,
-                    ),
-                  ),
-                ),
                 SizedBox(
                   height: 8.h,
                 ),
-                Text('Login as User',
-                    style: headingTheme.copyWith(fontSize: 22.sp)),
+                Text(
+                  'Login as User',
+                  style: MyFonts.getPoppin(
+                    color: Colors.black,
+                    fontSize: 22,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
                 SizedBox(
                   height: 10.h,
                 ),
                 TabBar(
-                    indicatorSize: TabBarIndicatorSize.label,
-                    indicatorColor: Colors.transparent,
-                    controller: _tabController,
-                    labelColor: Colors.black,
-                    labelStyle: tabviewTheme,
-                    unselectedLabelColor: Colors.grey.withOpacity(0.5),
-                    tabs: const [
-                      Tab(
-                        text: 'Email',
-                      ),
-                      Tab(
-                        text: 'Phone Number',
-                      ),
-                    ]),
+                  indicatorSize: TabBarIndicatorSize.label,
+                  indicatorColor: Colors.black,
+                  controller: _tabController,
+                  labelColor: Colors.black,
+                  labelStyle: MyFonts.getPoppin(
+                    color: Colors.black,
+                    fontSize: 15,
+                    fontWeight: FontWeight.w400,
+                  ),
+                  unselectedLabelColor: Colors.grey,
+                  tabs: const [
+                    Tab(
+                      text: 'Email',
+                    ),
+                    Tab(
+                      text: 'Phone Number',
+                    ),
+                  ],
+                ),
                 SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.6.h,
+                  height: MediaQuery.sizeOf(context).height * 0.8,
                   child: TabBarView(
                     controller: _tabController,
                     children: [
-                      SizedBox(
-                        child: Column(
-                          children: [
-                            SizedBox(
-                              height: 10.h,
+                      Column(
+                        children: [
+                          SizedBox(
+                            height: 30.h,
+                          ),
+                          CutsomTextField(
+                            controller: _emailController,
+                            type: 'Email',
+                            uppterType: 'Email',
+                            errorText: 'Enter Valid Email',
+                            hidetext: false,
+                          ),
+                          SizedBox(
+                            height: 15.h,
+                          ),
+                          CutsomTextField(
+                            controller: _passwordController,
+                            type: 'Password',
+                            suffixIcon: IconButton(
+                              onPressed: () {
+                                setState(() {
+                                  _showPassword = !_showPassword;
+                                });
+                              },
+                              icon: Icon(
+                                _showPassword
+                                    ? Icons.visibility_off
+                                    : Icons.visibility,
+                                color: Colors.black,
+                              ),
                             ),
-                            CutsomTextField(
-                              controller: _emailController,
-                              type: 'Email',
-                              icon: Icons.person,
-                              uppterType: 'Email',
-                              errorText: 'Enter Valid Email',
-                              hidetext: false,
-                            ),
-                            SizedBox(
-                              height: 15.h,
-                            ),
-                            CutsomTextField(
-                              controller: _passwordController,
-                              type: 'Password',
-                              icon: Icons.visibility,
-                              uppterType: 'Password',
-                              errorText: 'Enter your password',
-                              hidetext: true,
-                            ),
-                            SizedBox(
-                              height: 10.h,
-                            ),
-                            Consumer<errorProvider>(
-                              builder:
-                                  (BuildContext context, value, Widget? child) {
-                                return Column(
-                                    children: List.generate(
-                                  Provider.of<errorProvider>(context,
-                                          listen: false)
-                                      .errors
-                                      .length,
-                                  (index) => Padding(
-                                    padding: const EdgeInsets.only(left: 17.0),
-                                    child: Row(
-                                      children: [
-                                        Icon(
-                                          Icons.error_outline,
+                            uppterType: 'Password',
+                            errorText: 'Enter your password',
+                            hidetext: !_showPassword,
+                          ),
+                          SizedBox(
+                            height: 10.h,
+                          ),
+                          Consumer<errorProvider>(
+                            builder:
+                                (BuildContext context, value, Widget? child) {
+                              return Column(
+                                  children: List.generate(
+                                Provider.of<errorProvider>(context,
+                                        listen: false)
+                                    .errors
+                                    .length,
+                                (index) => Padding(
+                                  padding: const EdgeInsets.only(left: 17.0),
+                                  child: Row(
+                                    children: [
+                                      Icon(
+                                        Icons.error_outline,
+                                        color: Colors.red,
+                                        size: 12.sp,
+                                      ),
+                                      SizedBox(
+                                        width: 7.w,
+                                      ),
+                                      Text(
+                                        value.errors[index],
+                                        style: TextStyle(
+                                          fontFamily: 'Monsterrat-Medium',
+                                          fontSize: 12.sp,
+                                          fontWeight: FontWeight.normal,
                                           color: Colors.red,
-                                          size: 12.sp,
                                         ),
-                                        SizedBox(
-                                          width: 7.w,
-                                        ),
-                                        Text(
-                                          value.errors[index],
-                                          style: TextStyle(
-                                              fontFamily: 'Monsterrat-Medium',
-                                              fontSize: 12.sp,
-                                              fontWeight: FontWeight.normal,
-                                              color: Colors.red),
-                                        )
-                                      ],
-                                    ),
+                                      )
+                                    ],
                                   ),
-                                ));
-                              },
-                            ),
-                            SizedBox(
-                              height: 25.h,
-                            ),
-                            LoginInButton(
-                                heightt: 60,
-                                widthh: 310,
-                                text: 'Log in',
-                                color: kPrimaryColor,
-                                ontap: () async {
-                                  if (_formKey.currentState!.validate()) {
-                                    await _auth.signIn(
-                                        email: _emailController.text.toString(),
-                                        password:
-                                            _passwordController.text.toString(),
-                                        ctx: context);
-                                  }
-                                }),
-                            SizedBox(
-                              height: 20.h,
-                            ),
-                            Row(
-                              children: [
-                                Divider(
-                                  color: Colors.grey,
-                                  thickness: 2,
-                                  indent: 70.w,
-                                  endIndent: 70.w,
                                 ),
-                                const Text('or'),
-                                Divider(
-                                  color: Colors.grey,
-                                  thickness: 2,
-                                  indent: 70.w,
-                                  endIndent: 70.w,
+                              ));
+                            },
+                          ),
+                          SizedBox(
+                            height: 25.h,
+                          ),
+                          LoginInButton(
+                            widthh: 346,
+                            heightt: 59,
+                            text: 'Log in',
+                            color: Colors.purple,
+                            ontap: () async {
+                              if (_formKey.currentState!.validate()) {
+                                await _auth.signIn(
+                                    email: _emailController.text.toString(),
+                                    password:
+                                        _passwordController.text.toString(),
+                                    ctx: context);
+                              }
+                            },
+                          ),
+                          SizedBox(
+                            height: 20.h,
+                          ),
+                          Row(
+                            children: [
+                              Divider(
+                                color: Colors.grey,
+                                thickness: 2,
+                                indent: 70.w,
+                                endIndent: 70.w,
+                              ),
+                              Text(
+                                'or',
+                                style: MyFonts.getPoppin(
+                                  color: Colors.black,
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w600,
                                 ),
-                              ],
-                            ),
-                            SizedBox(
-                              height: 10.h,
-                            ),
-                            DiffLoginButton(
-                              text: 'Continue with Google',
-                              ontap: () async {
-                                await _auth.signInWithGoogle(context);
-                              },
-                              heightt: 60,
-                              widthh: 310,
-                              image: 'assets/icons/google.png',
-                            ),
-                            SizedBox(
-                              height: 10.h,
-                            ),
-                            DiffLoginButton(
-                              text: 'Continue with Facebook',
-                              ontap: () {},
-                              heightt: 60,
-                              widthh: 310,
-                              image: 'assets/icons/facebook.png',
-                            ),
-                            SizedBox(
-                              height: 10.h,
-                            ),
-                            Row(
-                              children: [
-                                Text('Forgot Password?',
-                                    style: TextStyle(
-                                        fontFamily: 'Monsterrat-Medium',
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 12.sp,
-                                        color: const Color(0xff000000)
-                                            .withOpacity(0.7))),
-                                SizedBox(
-                                  width: 3.w,
+                              ),
+                              Divider(
+                                color: Colors.grey,
+                                thickness: 2,
+                                indent: 70.w,
+                                endIndent: 70.w,
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            height: 10.h,
+                          ),
+                          DiffLoginButton(
+                            text: 'Continue with Google',
+                            ontap: () async {
+                              await _auth.signInWithGoogle(context);
+                            },
+                            widthh: 355,
+                            heightt: 55,
+                            image: 'assets/icons/google.png',
+                          ),
+                          SizedBox(
+                            height: 10.h,
+                          ),
+                          DiffLoginButton(
+                            text: 'Continue with Facebook',
+                            ontap: () {},
+                            widthh: 355,
+                            heightt: 55,
+                            image: 'assets/icons/facebook.png',
+                          ),
+                          SizedBox(
+                            height: 20.h,
+                          ),
+                          Row(
+                            children: [
+                              Text(
+                                'Forgot Password?',
+                                style: MyFonts.getPoppin(
+                                  color: Colors.black,
+                                  fontSize: 13,
+                                  fontWeight: FontWeight.w500,
                                 ),
-                                Text('Reset',
-                                    style: TextStyle(
-                                        fontFamily: 'Monsterrat-Medium',
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 12.sp,
-                                        color: Colors.blue))
-                              ],
-                            )
-                          ],
-                        ),
+                              ),
+                              SizedBox(
+                                width: 3.w,
+                              ),
+                              Text(
+                                'Reset',
+                                style: MyFonts.getPoppin(
+                                  color: Colors.purple,
+                                  fontSize: 13,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
                       ),
-                      const SizedBox()
+                      const SizedBox(),
                     ],
                   ),
-                )
+                ),
               ],
             ),
           ),

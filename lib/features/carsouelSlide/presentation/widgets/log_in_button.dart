@@ -1,3 +1,4 @@
+import 'package:elfa_main_dashboard/constants/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../constants.dart';
@@ -22,24 +23,23 @@ class LoginInButton extends StatelessWidget {
     return GestureDetector(
       onTap: ontap,
       child: Container(
-          height: heightt.sp,
-          width: widthh.sp,
-          decoration: BoxDecoration(
-              gradient: color == null
-                  ? const LinearGradient(
-                      colors: kgradientColors,
-                      begin: Alignment.topCenter,
-                      end: Alignment.bottomCenter,
-                    )
-                  : const LinearGradient(
-                      colors: ksecondarygradientColor,
-                      begin: Alignment.topCenter,
-                      end: Alignment.bottomCenter,
-                    ),
-              borderRadius: BorderRadius.circular(15)),
-          child: Center(
-              child: Text(text,
-                  style: TextStyle(color: Colors.white, fontSize: 19.sp)))),
+        height: heightt.sp,
+        width: widthh.sp,
+        decoration: BoxDecoration(
+          color: color,
+          borderRadius: BorderRadius.circular(15),
+        ),
+        child: Center(
+          child: Text(
+            text,
+            style: MyFonts.getPoppin(
+              color: Colors.white,
+              fontSize: 20,
+              fontWeight: FontWeight.w500,
+            ),
+          ),
+        ),
+      ),
     );
   }
 }

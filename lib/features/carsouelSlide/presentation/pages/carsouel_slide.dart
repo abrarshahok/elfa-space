@@ -106,15 +106,9 @@ class CarsouelSlide extends StatelessWidget {
                   heightt: 60,
                   widthh: 150,
                   text: 'Log in',
-                  // color: const Color(0xffB409CE),
+                  color: const Color(0xffB409CE),
                   ontap: () {
-                    showModalBottomSheet(
-                      isScrollControlled: true,
-                      context: context,
-                      builder: (BuildContext context) {
-                        return const LogInForm();
-                      },
-                    );
+                    Navigator.of(context).pushNamed(LogInForm.routeName);
                   },
                 ),
                 LoginInButton(
@@ -123,18 +117,7 @@ class CarsouelSlide extends StatelessWidget {
                   text: 'Sign Up',
                   color: Colors.grey,
                   ontap: () {
-                    showModalBottomSheet(
-                        isScrollControlled: true,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(20.r),
-                            topRight: Radius.circular(20.r),
-                          ),
-                        ),
-                        context: context,
-                        builder: (BuildContext context) {
-                          return const SignUpForm();
-                        });
+                    Navigator.of(context).pushNamed(SignUpForm.routeName);
                   },
                 )
               ],
