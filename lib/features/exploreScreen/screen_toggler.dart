@@ -1,6 +1,12 @@
 import 'package:flutter/foundation.dart';
 
-enum Screens { exploreScreen, gymPanel, schoolPanel, foodPanel }
+enum Screens {
+  exploreScreen,
+  gymPanel,
+  schoolPanel,
+  foodPanel,
+  marriageHallPanel,
+}
 
 class ScreenToggler with ChangeNotifier {
   Screens currentScreen = Screens.exploreScreen;

@@ -1,10 +1,10 @@
-import '/features/exploreScreen/explore_categories.dart';
-import '/food_panel/home/food_panel_home.dart';
-import '/gym_panel/gym_screen/gym_screen.dart';
-import '/school_panel/schools/schools_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
+import '/marriage_hall_panel/screens/marriage_hall_screen.dart';
+import '/features/exploreScreen/explore_categories.dart';
+import '/food_panel/home/food_panel_home.dart';
+import '../../gym_panel/screens/gym_screen.dart';
+import '/school_panel/schools/schools_screen.dart';
 import 'screen_toggler.dart';
 
 class ExploreScreen extends StatefulWidget {
@@ -21,6 +21,8 @@ Widget getScreens(Screens screen) {
     return const SchoolsScreen();
   } else if (screen == Screens.foodPanel) {
     return const FoodPanelHome();
+  } else if (screen == Screens.marriageHallPanel) {
+    return const MarriageHallScreen();
   } else {
     return ExploreCategories();
   }

@@ -116,6 +116,8 @@ class MyImages {
   static const String groceries1 = 'assets/images/groceries1.png';
   static const String groceries2 = 'assets/images/groceries2.png';
   static const String yellowLabel = 'assets/images/item.jpeg';
+  static const String hall1 = 'assets/images/hall1.jpeg';
+  static const String hall2 = 'assets/images/hall2.jpeg';
 }
 
 class MyFonts {

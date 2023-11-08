@@ -101,7 +101,7 @@ class Groceries extends StatelessWidget {
               ),
               const SizedBox(width: 27),
               Text(
-                'Dairy Shops',
+                'Grocery Stores',
                 textAlign: TextAlign.center,
                 style: GoogleFonts.montserrat(
                   color: const Color(0xD1920AB4),

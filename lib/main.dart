@@ -1,3 +1,8 @@
+import 'package:elfa_main_dashboard/marriage_hall_panel/components/map/hall_map.dart';
+
+import '/marriage_hall_panel/features/book_hall/confirm_info_page.dart';
+import '/marriage_hall_panel/features/book_hall/booking_done.dart';
+import 'marriage_hall_panel/features/book_hall/add_info_page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -14,8 +19,8 @@ import 'features/carsouelSlide/presentation/pages/carsouel_slide.dart';
 import 'features/carsouelSlide/presentation/provider/error_provider.dart';
 import 'school_panel/map/explore_on_map.dart';
 import 'school_panel/schools/school_info_page.dart';
-import 'gym_panel/gym_screen/gym_home_page.dart';
-import 'gym_panel/gym_screen/gym_screen.dart';
+import 'gym_panel/screens/gym_home_page.dart';
+import 'gym_panel/screens/gym_screen.dart';
 import 'gym_panel/features/booking/booking_info_page.dart';
 import 'gym_panel/features/booking/booking_page.dart';
 import 'gym_panel/features/booking/e_receipt_page.dart';
@@ -45,6 +50,7 @@ import 'food_panel/features/order/order_placed_screen.dart';
 import 'food_panel/features/order/track_order_screen.dart';
 import 'food_panel/screens/local_food_shops/local_food_shops.dart';
 import 'food_panel/screens/dairy_shops/dairy_shops.dart';
+import 'marriage_hall_panel/screens/marriage_hall_detail_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -113,6 +119,12 @@ class MyApp extends StatelessWidget {
             DairyShops.routeName: (context) => const DairyShops(),
             Bakeries.routeName: (context) => const Bakeries(),
             Groceries.routeName: (context) => const Groceries(),
+            MarriageHallDetailScreen.routeName: (context) =>
+                const MarriageHallDetailScreen(),
+            AddInfoPage.routeName: (context) => AddInfoPage(),
+            ConfirmInfoPage.routeName: (context) => ConfirmInfoPage(),
+            BookingDonePage.routeName: (context) => const BookingDonePage(),
+            HallMap.routeName: (context) => HallMap(),
           },
         ),
       );

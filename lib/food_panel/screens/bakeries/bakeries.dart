@@ -101,7 +101,7 @@ class Bakeries extends StatelessWidget {
               ),
               const SizedBox(width: 27),
               Text(
-                'Chicken Shops',
+                'Bakeries',
                 textAlign: TextAlign.center,
                 style: GoogleFonts.montserrat(
                   color: const Color(0xD1920AB4),

@@ -18,6 +18,8 @@ class VideosDashboard extends StatelessWidget {
             dividerColor: Colors.grey[200],
             indicatorSize: TabBarIndicatorSize.label,
             isScrollable: false,
+            labelColor: Colors.purple,
+            unselectedLabelColor: Colors.black,
             unselectedLabelStyle: MyFonts.getPoppin(
               color: const Color(0xFF9C9C9C),
               fontSize: 15,

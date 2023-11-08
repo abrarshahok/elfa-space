@@ -1,6 +1,6 @@
-import 'package:elfa_main_dashboard/news_feed/app/app_top_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
+import '../app/app_top_bar.dart';
 import '/features/exploreScreen/explore_screen.dart';
 import '../../constants/constants.dart';
 import '../influencers/influencers.dart';
@@ -15,9 +15,13 @@ class NewsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
+      appBar: AppBar(
+        titleSpacing: 0,
+        title: const AppTopBar(),
+        automaticallyImplyLeading: false,
+      ),
       body: Column(
         children: [
-          const AppTopBar(),
           Expanded(
             child: DefaultTabController(
               length: 5,

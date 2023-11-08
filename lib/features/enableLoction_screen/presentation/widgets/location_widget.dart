@@ -1,4 +1,4 @@
-import 'package:elfa_main_dashboard/features/carsouelSlide/presentation/pages/carsouel_slide.dart';
+import '/features/carsouelSlide/presentation/pages/carsouel_slide.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:permission_handler/permission_handler.dart';
@@ -14,18 +14,22 @@ class LocationButton extends StatelessWidget {
         await checkPermission(context);
       },
       child: Container(
-          height: 60.sp,
-          width: 310.sp,
-          decoration: BoxDecoration(
-              gradient: const LinearGradient(
-                colors: kgradientColors,
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-              ),
-              borderRadius: BorderRadius.circular(25)),
-          child: Center(
-              child: Text('Ok, I Understand',
-                  style: TextStyle(color: Colors.white, fontSize: 15.sp)))),
+        height: 60.sp,
+        width: 310.sp,
+        decoration: BoxDecoration(
+            gradient: const LinearGradient(
+              colors: kgradientColors,
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+            ),
+            borderRadius: BorderRadius.circular(25)),
+        child: Center(
+          child: Text(
+            'Ok, I Understand',
+            style: TextStyle(color: Colors.white, fontSize: 15.sp),
+          ),
+        ),
+      ),
     );
   }
 }

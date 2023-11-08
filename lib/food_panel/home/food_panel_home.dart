@@ -136,67 +136,67 @@ class _FoodContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 366,
-      height: 96,
-      margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-      decoration: ShapeDecoration(
-        color: Colors.white,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(20),
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        width: 366,
+        height: 96,
+        margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+        decoration: ShapeDecoration(
+          color: Colors.white,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20),
+          ),
+          shadows: const [
+            BoxShadow(
+              color: Color(0x3F000000),
+              blurRadius: 4,
+              offset: Offset(0, 4),
+              spreadRadius: 0,
+            ),
+          ],
         ),
-        shadows: const [
-          BoxShadow(
-            color: Color(0x3F000000),
-            blurRadius: 4,
-            offset: Offset(0, 4),
-            spreadRadius: 0,
-          ),
-        ],
-      ),
-      child: Row(
-        children: [
-          const SizedBox(width: 20),
-          Container(
-            width: 54,
-            height: 48,
-            decoration: ShapeDecoration(
-              image: DecorationImage(
-                image: AssetImage(image),
-                fit: BoxFit.fill,
-              ),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(5),
-              ),
-            ),
-          ),
-          const SizedBox(width: 15),
-          Text(
-            title,
-            textAlign: TextAlign.center,
-            style: MyFonts.getPoppin(
-              color: const Color(0xFFB30ACE),
-              fontSize: 18,
-              fontWeight: FontWeight.w500,
-            ),
-          ),
-          const Spacer(),
-          SizedBox(
-            width: 45,
-            height: 43,
-            child: IconButton(
-              color: const Color(0xFFB30ACE),
-              onPressed: onTap,
-              icon: Transform.flip(
-                flipX: true,
-                child: const Icon(
-                  Icons.arrow_back_ios_new,
+        child: Row(
+          children: [
+            const SizedBox(width: 20),
+            Container(
+              width: 54,
+              height: 48,
+              decoration: ShapeDecoration(
+                image: DecorationImage(
+                  image: AssetImage(image),
+                  fit: BoxFit.fill,
+                ),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(5),
                 ),
               ),
             ),
-          ),
-          const SizedBox(width: 15),
-        ],
+            const SizedBox(width: 15),
+            Text(
+              title,
+              textAlign: TextAlign.center,
+              style: MyFonts.getPoppin(
+                color: const Color(0xFFB30ACE),
+                fontSize: 18,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+            const Spacer(),
+            SizedBox(
+              width: 45,
+              height: 43,
+              child: Transform.flip(
+                flipX: true,
+                child: const Icon(
+                  Icons.arrow_back_ios_new,
+                  color: Colors.purple,
+                ),
+              ),
+            ),
+            const SizedBox(width: 15),
+          ],
+        ),
       ),
     );
   }

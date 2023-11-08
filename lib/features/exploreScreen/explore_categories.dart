@@ -1,4 +1,4 @@
-import 'package:elfa_main_dashboard/gym_panel/gym_screen/gym_screen.dart';
+import 'package:elfa_main_dashboard/gym_panel/screens/gym_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -45,7 +45,7 @@ class ExploreCategories extends StatelessWidget {
         "text": "Marriage Halls",
         "image": "assets/splashAssets/carsouelAssets/slide6.png",
         "route": WorkSpace.routeName,
-        'toggle': "",
+        'toggle': Screens.marriageHallPanel,
       },
     ];
 
@@ -58,14 +58,37 @@ class ExploreCategories extends StatelessWidget {
             SizedBox(
               height: 10.h,
             ),
-            Text(
-              'Find best places near you!',
-              style: GoogleFonts.chelseaMarket(
-                color: const Color(0xFFB509D0),
-                fontSize: 20,
-                fontWeight: FontWeight.w400,
-                letterSpacing: -0.28,
-              ),
+            Row(
+              children: [
+                Text(
+                  'Find best places near you!',
+                  style: GoogleFonts.chelseaMarket(
+                    color: const Color(0xFFB509D0),
+                    fontSize: 20,
+                    fontWeight: FontWeight.w400,
+                    letterSpacing: -0.28,
+                  ),
+                ),
+                const Spacer(),
+                const Column(
+                  children: [
+                    Icon(
+                      Icons.location_on_rounded,
+                      color: Colors.purple,
+                      size: 32,
+                    ),
+                    Text(
+                      'Hyd, Sindh, 71000',
+                      style: TextStyle(
+                        color: Color(0xFFB30ACE),
+                        fontSize: 10,
+                        fontFamily: 'Chenla',
+                        fontWeight: FontWeight.w400,
+                      ),
+                    )
+                  ],
+                ),
+              ],
             ),
             SizedBox(
               height: 10.h,
