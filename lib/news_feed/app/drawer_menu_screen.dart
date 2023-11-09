@@ -1,4 +1,7 @@
+import 'package:elfa_main_dashboard/features/carsouelSlide/presentation/pages/carsouel_slide.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import '/constants/constants.dart';
 import 'package:flutter/material.dart';
 
@@ -163,9 +166,15 @@ class DrawerMenuScreen extends StatelessWidget {
                         ],
                       ),
                     ),
-                    const CircleAvatar(
-                      radius: 15,
-                      child: Icon(
+                    IconButton(
+                      onPressed: () {
+                        FirebaseAuth.instance.signOut();
+                        GoogleSignIn().signOut();
+                        Navigator.of(context).pushReplacementNamed(
+                          CarsouelSlide.routeName,
+                        );
+                      },
+                      icon: const Icon(
                         Icons.logout,
                         color: Color(0xFF918F8F),
                       ),

@@ -31,7 +31,7 @@ class VideosDashboard extends StatelessWidget {
               fontWeight: FontWeight.w500,
             ),
             tabs: const [
-              Tab(text: 'Posts'),
+              Tab(text: 'Videos'),
               Tab(text: 'Reels'),
               Tab(text: 'Live'),
             ],
