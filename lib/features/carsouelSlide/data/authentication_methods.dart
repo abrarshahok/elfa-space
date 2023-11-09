@@ -21,6 +21,7 @@ class AuthenticationMethods {
         .signInWithEmailAndPassword(email: email, password: password)
         .then((value) {
       Utils().showMsg('Signed In Successfully');
+      Navigator.pop(ctx);
       Navigator.pushReplacementNamed(ctx, AppDrawer.routeName);
       Provider.of<CircleIndicatorProvider>(ctx, listen: false)
           .switchCircleIndicator();

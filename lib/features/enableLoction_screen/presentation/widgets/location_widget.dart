@@ -38,6 +38,6 @@ Future<void> checkPermission(BuildContext context) async {
   final status = await Permission.location.request();
   if (status.isGranted) {
     // ignore: use_build_context_synchronously
-    Navigator.pushNamed(context, CarsouelSlide.routeName);
+    Navigator.pushReplacementNamed(context, CarsouelSlide.routeName);
   }
 }
