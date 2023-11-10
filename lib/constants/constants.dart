@@ -43,6 +43,10 @@ class MyIcons {
   static const String group = 'assets/icons/group.png';
   static const String savedIcon2 = 'assets/icons/saved2.png';
   static const String filter2 = 'assets/icons/filter2.png';
+  static const String instagram = 'assets/icons/instagram.png';
+  static const String twitter = 'assets/icons/twitter.png';
+  static const String google = 'assets/icons/google.png';
+  static const String facebook = 'assets/icons/facebook.png';
 }
 
 class MyImages {
@@ -118,6 +122,7 @@ class MyImages {
   static const String yellowLabel = 'assets/images/item.jpeg';
   static const String hall1 = 'assets/images/hall1.jpeg';
   static const String hall2 = 'assets/images/hall2.jpeg';
+  static const String elfaSpaceLogo = 'assets/logo/logo.png';
 }
 
 class MyFonts {

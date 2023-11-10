@@ -30,22 +30,22 @@ class CutsomTextField extends StatelessWidget {
       decoration: InputDecoration(
         hintText: type,
         hintStyle: MyFonts.getPoppin(
-          color: const Color(0xFF847A7A),
-          fontSize: 17,
-          fontWeight: FontWeight.w300,
+          color: const Color(0xFFBBBBBB),
+          fontSize: 15,
+          fontWeight: FontWeight.w500,
         ),
         floatingLabelBehavior: FloatingLabelBehavior.always,
         contentPadding:
             const EdgeInsets.symmetric(horizontal: 42, vertical: 20),
         enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(9),
+          borderRadius: BorderRadius.circular(10),
           borderSide: const BorderSide(
             color: Color(0xFFBDB2B2),
           ),
           gapPadding: 10,
         ),
         focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(9),
+          borderRadius: BorderRadius.circular(10),
           borderSide: const BorderSide(
             color: Colors.purple,
           ),

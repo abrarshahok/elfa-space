@@ -50,8 +50,11 @@ class AuthenticationMethods {
   Future<void> signInWithGoogle(BuildContext ctx) async {
     final GoogleSignInAccount? googleSignInAccount =
         await googleSignIn.signIn();
+    if (googleSignInAccount == null) {
+      return;
+    }
     final GoogleSignInAuthentication googleSignInAuthentication =
-        await googleSignInAccount!.authentication;
+        await googleSignInAccount.authentication;
 
     final AuthCredential credential = GoogleAuthProvider.credential(
       accessToken: googleSignInAuthentication.accessToken,

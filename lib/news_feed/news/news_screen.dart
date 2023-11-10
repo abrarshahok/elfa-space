@@ -17,6 +17,7 @@ class NewsScreen extends StatelessWidget {
       backgroundColor: Colors.white,
       appBar: AppBar(
         titleSpacing: 0,
+        elevation: 0,
         title: const AppTopBar(),
         automaticallyImplyLeading: false,
       ),
