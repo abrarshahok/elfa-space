@@ -2,6 +2,7 @@ import 'package:elfa_main_dashboard/constants/constants.dart';
 import 'package:elfa_main_dashboard/features/carsouelSlide/presentation/widgets/login_form.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../splash_screen/domain/utilities/utils.dart';
 import '../../data/authentication_methods.dart';
 import 'custom_textfield.dart';
 import 'log_in_button.dart';
@@ -31,6 +32,8 @@ class _SignInFormState extends State<SignUpForm> {
     super.dispose();
   }
 
+  bool _hidePassword = false;
+  bool _isAgreed = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -54,7 +57,7 @@ class _SignInFormState extends State<SignUpForm> {
                 ),
                 SizedBox(height: 10.h),
                 CutsomTextField(
-                  controller: _emailController,
+                  controller: _nameController,
                   type: 'Username',
                   uppterType: 'Username',
                   errorText: "Enter your Name",
@@ -64,7 +67,7 @@ class _SignInFormState extends State<SignUpForm> {
                   height: 15.h,
                 ),
                 CutsomTextField(
-                  controller: _nameController,
+                  controller: _emailController,
                   type: 'Email or Phone',
                   uppterType: 'Email',
                   errorText: "Enter your email",
@@ -78,7 +81,18 @@ class _SignInFormState extends State<SignUpForm> {
                   type: 'Password',
                   uppterType: 'Password',
                   errorText: "Enter your password",
-                  hidetext: true,
+                  hidetext: !_hidePassword,
+                  suffixIcon: IconButton(
+                    onPressed: () {
+                      setState(() {
+                        _hidePassword = !_hidePassword;
+                      });
+                    },
+                    icon: Icon(
+                      _hidePassword ? Icons.visibility_off : Icons.visibility,
+                      color: Colors.black,
+                    ),
+                  ),
                 ),
                 SizedBox(
                   height: 15.h,
@@ -86,10 +100,16 @@ class _SignInFormState extends State<SignUpForm> {
                 Row(
                   children: [
                     IconButton(
-                      onPressed: () {},
-                      icon: const Icon(
-                        color: Color(0xFFD9D9D9),
-                        Icons.check_box_outline_blank,
+                      onPressed: () {
+                        setState(() {
+                          _isAgreed = !_isAgreed;
+                        });
+                      },
+                      icon: Icon(
+                        color: const Color(0xFFD9D9D9),
+                        _isAgreed
+                            ? Icons.check_box
+                            : Icons.check_box_outline_blank,
                         size: 30,
                       ),
                     ),
@@ -155,12 +175,17 @@ class _SignInFormState extends State<SignUpForm> {
                     text: 'Sign Up',
                     color: const Color(0xffB409CE),
                     ontap: () {
+                      if (!_isAgreed) {
+                        Utils().showMsg('Please agree to our terms & policies');
+                        return;
+                      }
                       if (_formkey.currentState!.validate()) {
                         _auth.signUP(
-                            email: _emailController.text.toString(),
-                            password: _passwordController.text.toString(),
-                            ctx: context,
-                            phone: _phoneNumController.text.toString());
+                          ctx: context,
+                          email: _emailController.text,
+                          password: _passwordController.text,
+                          phone: _phoneNumController.text,
+                        );
                       }
                     }),
                 SizedBox(height: 50.h),

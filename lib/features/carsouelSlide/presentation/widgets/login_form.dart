@@ -37,7 +37,7 @@ class _LogInFormState extends State<LogInForm>
     super.dispose();
   }
 
-  bool _showPassword = false;
+  bool _hidePassword = false;
 
   @override
   Widget build(BuildContext context) {
@@ -92,17 +92,17 @@ class _LogInFormState extends State<LogInForm>
                   suffixIcon: IconButton(
                     onPressed: () {
                       setState(() {
-                        _showPassword = !_showPassword;
+                        _hidePassword = !_hidePassword;
                       });
                     },
                     icon: Icon(
-                      _showPassword ? Icons.visibility_off : Icons.visibility,
+                      _hidePassword ? Icons.visibility_off : Icons.visibility,
                       color: Colors.black,
                     ),
                   ),
                   uppterType: 'Password',
                   errorText: 'Enter your password',
-                  hidetext: !_showPassword,
+                  hidetext: !_hidePassword,
                 ),
                 SizedBox(
                   height: 10.h,

@@ -40,10 +40,18 @@ class AuthenticationMethods {
   }) async {
     _auth
         .createUserWithEmailAndPassword(
-            email: email.toString(), password: password.toString())
+      email: email.trim().toString(),
+      password: password.trim().toString(),
+    )
         .then((value) {
       Utils().showMsg('Account Created');
-      Navigator.pop(ctx);
+      Navigator.pushReplacementNamed(ctx, AppDrawer.routeName);
+      Provider.of<CircleIndicatorProvider>(ctx, listen: false)
+          .switchCircleIndicator();
+    }).onError((error, stackTrace) {
+      Utils().showMsg(error.toString());
+      Provider.of<CircleIndicatorProvider>(ctx, listen: false)
+          .switchCircleIndicator();
     });
   }
 
