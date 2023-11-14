@@ -9,28 +9,28 @@ class NearbyTuitions extends StatelessWidget {
   final nearbyTuitionsList = const [
     {
       'name': 'Tuition 1',
-      'address': 'Z Block Y Town Faisalabad',
+      'address': 'Latifabad, Hyderabad',
       'rating': 4.9,
       'reviews': 34,
       'image': MyImages.school2,
     },
     {
       'name': 'Tuition 2',
-      'address': 'Z Block Y Town Faisalabad',
+      'address': 'Latifabad, Hyderabad',
       'rating': 4.9,
       'reviews': 34,
       'image': MyImages.school3,
     },
     {
       'name': 'Tuition 3',
-      'address': 'Z Block Y Town Faisalabad',
+      'address': 'Latifabad, Hyderabad',
       'rating': 4.9,
       'reviews': 34,
       'image': MyImages.school2,
     },
     {
       'name': 'Tuition 4',
-      'address': 'Z Block Y Town Faisalabad',
+      'address': 'Latifabad, Hyderabad',
       'rating': 4.9,
       'reviews': 34,
       'image': MyImages.school3,
@@ -48,7 +48,8 @@ class NearbyTuitions extends StatelessWidget {
       delegate: SliverChildBuilderDelegate(
         (BuildContext context, int index) {
           return InkWell(
-            onTap: () => Navigator.of(context).pushNamed(SchoolInfoPage.routeName),
+            onTap: () =>
+                Navigator.of(context).pushNamed(SchoolInfoPage.routeName),
             child: SchoolCard(
               name: nearbyTuitionsList[index]['name'] as String,
               address: nearbyTuitionsList[index]['address'] as String,

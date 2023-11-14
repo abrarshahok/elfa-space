@@ -10,6 +10,7 @@ class CutsomTextField extends StatelessWidget {
   final String uppterType;
   final String errorText;
   final bool hidetext;
+  final String? Function(String?)? validator;
 
   const CutsomTextField({
     super.key,
@@ -19,6 +20,7 @@ class CutsomTextField extends StatelessWidget {
     required this.uppterType,
     required this.errorText,
     required this.hidetext,
+    this.validator,
   });
 
   @override

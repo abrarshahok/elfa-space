@@ -11,28 +11,28 @@ class NearbySchools extends StatelessWidget {
   final nearbySchoolsList = const [
     {
       'name': 'School 1',
-      'address': 'Z Block Y Town Faisalabad',
+      'address': 'Latifabad, Hyderabad',
       'rating': 4.9,
       'reviews': 34,
       'image': MyImages.school2,
     },
     {
       'name': 'School 2',
-      'address': 'Z Block Y Town Faisalabad',
+      'address': 'Latifabad, Hyderabad',
       'rating': 4.9,
       'reviews': 34,
       'image': MyImages.school3,
     },
     {
       'name': 'School 3',
-      'address': 'Z Block Y Town Faisalabad',
+      'address': 'Latifabad, Hyderabad',
       'rating': 4.9,
       'reviews': 34,
       'image': MyImages.school2,
     },
     {
       'name': 'School 4',
-      'address': 'Z Block Y Town Faisalabad',
+      'address': 'Latifabad, Hyderabad',
       'rating': 4.9,
       'reviews': 34,
       'image': MyImages.school3,

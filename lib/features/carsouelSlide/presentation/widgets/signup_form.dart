@@ -2,7 +2,6 @@ import 'package:elfa_main_dashboard/constants/constants.dart';
 import 'package:elfa_main_dashboard/features/carsouelSlide/presentation/widgets/login_form.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../splash_screen/domain/utilities/utils.dart';
 import '../../data/authentication_methods.dart';
 import 'custom_textfield.dart';
 import 'log_in_button.dart';
@@ -32,7 +31,7 @@ class _SignInFormState extends State<SignUpForm> {
     super.dispose();
   }
 
-  bool _hidePassword = false;
+  bool _hidePassword = true;
   bool _isAgreed = false;
   @override
   Widget build(BuildContext context) {
@@ -81,7 +80,7 @@ class _SignInFormState extends State<SignUpForm> {
                   type: 'Password',
                   uppterType: 'Password',
                   errorText: "Enter your password",
-                  hidetext: !_hidePassword,
+                  hidetext: _hidePassword,
                   suffixIcon: IconButton(
                     onPressed: () {
                       setState(() {
@@ -89,7 +88,7 @@ class _SignInFormState extends State<SignUpForm> {
                       });
                     },
                     icon: Icon(
-                      _hidePassword ? Icons.visibility_off : Icons.visibility,
+                      _hidePassword ? Icons.visibility : Icons.visibility_off,
                       color: Colors.black,
                     ),
                   ),
@@ -175,10 +174,6 @@ class _SignInFormState extends State<SignUpForm> {
                     text: 'Sign Up',
                     color: const Color(0xffB409CE),
                     ontap: () {
-                      if (!_isAgreed) {
-                        Utils().showMsg('Please agree to our terms & policies');
-                        return;
-                      }
                       if (_formkey.currentState!.validate()) {
                         _auth.signUP(
                           ctx: context,

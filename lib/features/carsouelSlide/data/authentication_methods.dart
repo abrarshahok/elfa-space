@@ -44,7 +44,8 @@ class AuthenticationMethods {
       password: password.trim().toString(),
     )
         .then((value) {
-      Utils().showMsg('Account Created');
+      Utils().showMsg('Account Created Successfully');
+      Navigator.pop(ctx);
       Navigator.pushReplacementNamed(ctx, AppDrawer.routeName);
       Provider.of<CircleIndicatorProvider>(ctx, listen: false)
           .switchCircleIndicator();
@@ -70,6 +71,7 @@ class AuthenticationMethods {
     );
     await _auth.signInWithCredential(credential).then((value) {
       Utils().showMsg('Signed In Successfully');
+      Navigator.pop(ctx);
       Navigator.pushReplacementNamed(ctx, AppDrawer.routeName);
       Provider.of<CircleIndicatorProvider>(ctx, listen: false)
           .switchCircleIndicator();

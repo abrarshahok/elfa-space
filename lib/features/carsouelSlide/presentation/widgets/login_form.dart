@@ -37,7 +37,7 @@ class _LogInFormState extends State<LogInForm>
     super.dispose();
   }
 
-  bool _hidePassword = false;
+  bool _hidePassword = true;
 
   @override
   Widget build(BuildContext context) {
@@ -96,13 +96,13 @@ class _LogInFormState extends State<LogInForm>
                       });
                     },
                     icon: Icon(
-                      _hidePassword ? Icons.visibility_off : Icons.visibility,
+                      _hidePassword ? Icons.visibility : Icons.visibility_off,
                       color: Colors.black,
                     ),
                   ),
                   uppterType: 'Password',
                   errorText: 'Enter your password',
-                  hidetext: !_hidePassword,
+                  hidetext: _hidePassword,
                 ),
                 SizedBox(
                   height: 10.h,

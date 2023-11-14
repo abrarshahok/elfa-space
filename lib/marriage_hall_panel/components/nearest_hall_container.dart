@@ -60,7 +60,7 @@ class NearestHallContainer extends StatelessWidget {
                         color: Colors.white,
                       ),
                       Text(
-                        'Autobhan Road,Hyderabad',
+                        'Latifabad, Hyderabad',
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           color: Color(0xF2F7E4E4),

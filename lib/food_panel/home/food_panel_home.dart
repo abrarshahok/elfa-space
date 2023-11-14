@@ -103,6 +103,26 @@ class FoodPanelHome extends StatelessWidget {
               ),
             ),
             const Spacer(),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Icon(
+                  Icons.location_on_outlined,
+                  size: 26,
+                  color: Colors.purple,
+                ),
+                Text(
+                  'Latifabad, Hyderabad',
+                  textAlign: TextAlign.center,
+                  style: MyFonts.getPoppin(
+                    color: const Color(0xFFB30ACE),
+                    fontSize: 6,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(width: 20),
           ],
         ),
         Expanded(
